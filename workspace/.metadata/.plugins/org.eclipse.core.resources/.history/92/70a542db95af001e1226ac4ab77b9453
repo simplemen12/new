@@ -1,0 +1,14 @@
+package day06;
+
+public class ArrayEx01 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		/*
+		 * 10개의 배열을 담을 수 있는 arr배열을 생성
+		 * 1-10까지 값을 입력한 후 출력 
+		 */
+
+	}
+
+}

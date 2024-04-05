@@ -1,0 +1,19 @@
+package day10;
+
+public class Class02 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
+
+
+class Car{ //클래스명은 대문자로 시작한다 / 멤버변수 = private 메서드 = public으로 설정하는 것이 일반적이다 
+	//getter / setter 메서드  
+	
+	private String name;
+	
+	
+}

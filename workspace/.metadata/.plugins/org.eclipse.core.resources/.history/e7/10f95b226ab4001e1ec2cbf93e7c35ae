@@ -1,0 +1,178 @@
+package day10;
+
+public class Class03 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Car c = new Car();
+		c.setName("제네시스");
+		c.setColor("빨강");
+		c.setYear("2020");
+		c.print(); 
+		c.power();
+		System.out.println("my Car Power:"+(c.isPower()? "on":"off"));
+		c.power();
+		System.out.println("my Car Power:"+(c.isPower()? "on":"off"));
+		c.speedUp();
+		System.out.println("my car speed"+c.getSpeed());
+		c.speedUp();
+		c.speedUp();
+		c.speedUp();
+		c.speedUp();
+		System.out.println("my car speed"+c.getSpeed());
+		
+		
+		
+		
+		
+		
+		Car c2 = new Car();
+		c2.setName("그랜져");
+		c2.setColor("검정");
+		c2.setYear("2023");
+		c2.print();
+		c2.power();
+		System.out.println("Car2 Power:"+(c2.isPower()? "on":"off"));
+		System.out.println("car2 speed"+c2.getSpeed());
+		c2.speedUp();
+		c2.speedUp();
+		c2.speedUp();
+		c2.speedUp();
+
+		System.out.println("car2 speed"+c2.getSpeed());
+
+		c2.power();
+		System.out.println("Car2 Power:"+(c2.isPower()? "on":"off"));
+
+	}
+	
+	
+
+
+
+//같은 패키지에서 같은 이름의 클래스를 사용하면 에러가 발생한다  
+
+    class car2{
+	//멤버변수 name year color power speed  door
+	//내 차량의 정보를 출력하는 메서드  name year color door
+	//power() 켜져야 up down가능 시동이 켜지면 켜졌습니다 라고 출력 속도가 올라간 상태에서는 power 사용 불가능
+	
+    	
+    //speedUP 300이상이면 최고속도  시동이 꺼져있다면 시동이 꺼져있습니다 시동을 켜주세요 라고 출력
+	//speedDown 0이되면 내려가지 않음 0이되면 멈췄습니다 출력 내릴때마다 현재속도 출력
+	//getter / setter
+    	
+    	
+    	 //클래스명은 대문자로 시작한다 / 멤버변수 = private 메서드 = public으로 설정하는 것이 일반적이다 
+    		//getter / setter 메서드  
+    	    private String door;
+    		private String name;
+    		private String color;
+    		private String year;
+    	    private boolean power;
+    	    private int speed;
+    	    
+    	    
+    	    //power()
+    	    //커져있을경우 => 켜짐
+    	    //켜져있을경우 => 꺼짐
+    	    public void power() {
+    	    	if(speed!=0) { 
+    	    	power = !power;
+    	    	}
+    	    	if(speed==0) {
+    	    	System.out.println();
+    	    	}
+    	    }
+
+    	    
+    	    //speedUp()
+    	    public void speedUp() {
+    	    	
+    	    	if(speed!=300 && power==true) {
+    	    	speed+=10;
+    	    	}
+    	    	if(power==false) {
+    	    		System.out.println("시동이 꺼졌습니다, 시동을 켜주세요.");
+    	    	}
+    	    	System.out.println("현재속도"+speed);
+    	    	
+    	    }
+    	    
+    	    //speedDown()
+    	    public void speedDown() {
+    	    	if(speed!=0)
+    	    	speed-=10;
+    	    	if(speed==0) {
+    	    		System.out.println("멈췄습니다.");
+    	    	}
+    	    	System.out.println("현재속도"+speed);
+    	    }
+    	    
+    	    //print() 
+    	    public void print() {
+    	    	System.out.println("myCar:"+name+"/"+color+"("+year+")"+door);
+    	    }
+    	    
+    	    public String getdoor() {
+    			return door;
+    		}
+
+    		public void setdoor(String door) {
+    			this.door = door;
+    		}
+
+
+
+    		public String getName() {
+    			return name;
+    		}
+
+    		public void setName(String name) {
+    			this.name = name;
+    		}
+
+
+    		public String getColor() {
+    			return color;
+    		}
+
+
+    		public void setColor(String color) {
+    			this.color = color;
+    		}
+
+
+    		public String getYear() {
+    			return year;
+    		}
+
+
+    		public void setYear(String year) {
+    			this.year = year;
+    		}
+
+
+    		public boolean isPower() {
+    			return power;
+    		}
+
+
+    		public void setPower(boolean power) {
+    			this.power = power;
+    		}
+
+
+    		public int getSpeed() {
+    			return speed;
+    		}
+
+
+    		public void setSpeed(int speed) {
+    			this.speed = speed;
+    		}
+    
+    }
+}
+	
+

@@ -1,0 +1,116 @@
+package day05;
+
+import java.util.Scanner;
+
+public class ForEx01 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		/*
+		 * 소수: 약수가 1과 자기자신만의 수를 가지는 수를 소수라고 한다.
+		 * 소수: 3 5 7 11 13 17 19
+		 * 소수의 약수 (1, 나 자신)
+		 * 
+		 * 
+		 * 숫자 하나를 입력받아서 해당 수가 소수인지 아닌지 판별
+		 * num = 13 
+		 * 소수입니다.
+		 * num = 12
+		 * 소수가 아닙니다.
+		 */
+		/*
+		 * 약수 : 나누어서 떨어지는 수의 집합
+		 * 6의 약수 : 6/1, 6/2, 6/3, 6/4, 6/5, 6/6=0
+		 */
+	
+		//num1를 입력받아서 약수를 출력 
+        
+		/*
+		 * 
+		 * Scanner scan = new Scanner(System.in);
+		
+        int cnt = 0 ;
+		
+		System.out.println("숫자(정수)를 입력해주세요.");
+		int num1 = scan.nextInt();
+		System.out.println("내가입력한 수1 :"+num1);
+		for(int i=1; i<=num1; i++) {
+			if(num1 % i == 0) {
+				System.out.println(i+"");
+				cnt ++;
+			 
+			}
+		
+		}
+		if(cnt>=3) {
+			System.out.println("소수가 아닙니다.");
+			
+		}
+		if(cnt<=2) {
+			System.out.println("소수 입니다.");
+			
+		}
+		
+		scan.close();
+		
+		 * scanner scan = new scanner(System.in);
+		 * system.out.println("숫자를 입력해주세요.");
+		 * int num =scan.nextInt();
+		 * int count = 0 ;
+		 * for(int i=1; i<=num; i++){
+		 *약수의 개수를 세기위해서 돌림.
+		 *if(num % i == ){
+		 *count++;
+		 *}
+		 *}
+		 *if(count == 2) {
+		 *system.out.print(num+"는 소수입니다.");
+		 *}else{
+		 *system.out.println(num+"는 소수가 아닙니다.");
+		 *}
+		 *
+		 *
+		 * 2 - 100 까지의 소수를 모두 출력 
+		 * 
+		 * 
+		 * 2중 for문 힌트 
+		 * 2 - 100까지 돌리는 for문 
+		 * 
+		 * 1부터 num까지 돌리는 for문 이중 
+		 */
+Scanner scan = new Scanner(System.in);
+		
+        int cnt = 0 ;
+		int i;
+		System.out.println("숫자(정수)를 입력해주세요.");
+		int num1 = scan.nextInt();
+		System.out.println("내가입력한 수1 :"+num1);
+		
+		for(i=2; i<=100; i++) {
+		for(i=1; i<=num1; i++) {
+			if(num1 % i == 0) {
+				System.out.println(i+"");
+				cnt ++;
+			 
+			}
+		
+		}
+		if(cnt>=3) {
+			System.out.println("소수가 아닙니다.");
+			
+		}
+		if(cnt<=2) {
+			System.out.println("소수 입니다.");
+			
+		}
+		}
+		
+		scan.close();
+		
+		
+		
+
+	}
+
+}

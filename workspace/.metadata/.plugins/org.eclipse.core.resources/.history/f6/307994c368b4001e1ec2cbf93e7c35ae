@@ -1,0 +1,28 @@
+package day10;
+
+public class Class03 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+	
+	
+
+
+
+//같은 패키지에서 같은 이름의 클래스를 사용하면 에러가 발생한다  
+
+    Class car2{
+	//멤버변수 name year color power speed  door
+	//내 차량의 정보를 출력하는 메서드  name year color door
+	//power() 켜져야 up down가능 시동이 켜지면 켜졌습니다 라고 출력
+	
+    	
+    //speedUP 300이상이면 최고속도  시동이 꺼져있다면 시동이 꺼져있습니다 시동을 켜주세요 라고 출력
+	//speedDown 0이되면 내려가지 않음 0이되면 멈췄습니다 출력 내릴때마다 현재속도 출력
+	//getter / setter
+    }
+}
+	
+

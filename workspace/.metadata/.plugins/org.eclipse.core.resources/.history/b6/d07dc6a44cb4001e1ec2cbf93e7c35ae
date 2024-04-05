@@ -1,0 +1,52 @@
+package day10;
+
+import java.util.Scanner;
+
+import day08.Method07;
+
+public class 베이스볼게임답 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int comNum[] = new int[3]; //컴퓨터
+		int myNum[] = new int[3]; //유저
+		Scanner scan = new Scanner(System.in);
+	}
+	
+	
+	public static void creatArray(int arr[]) {
+		int cnt = 0;
+		while(cnt<arr.length) {
+			int r = (int)(Math.random()*9)+1;
+			if(!Method07.isContain(arr, r){
+				arr[cnt] = r;
+				cnt++;
+			}
+		}
+	}
+	
+	//랜덤범위에 상관없이 랜덤수를 채우는 메서드 
+	//범위를 매개변수로 받아오면 됨.
+	//int r = (int)(Math.random()*개수)+시작값;
+	// start, count 매개변수로 바아 범위를 생성  
+	public static void createArrayRandom(int arr[], int start, int count) {
+		int cnt = 0;
+		while(cnt<arr.length) {
+			int r = (int)(Math.random()*count)+start;
+			if(!Method07.isContain(arr, r){
+				arr[cnt] = r;
+				cnt++;
+			}
+		}
+	}
+	
+	
+
+	
+	
+	
+	
+	
+	
+	
+}

@@ -1,0 +1,70 @@
+package day10;
+
+import day08.Method07;
+
+public class BaseBallGame {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		/*
+		 * 야구게임을 메서드화
+		 * 사용자번호는 직접입력
+		 * 번호는 랜덤 생성 1-9 중복 x
+		 * 중복안되게 하는 메서드 isContain 호출해서 사용 
+		 */
+		
+		int comNum[] = new int[3]; //컴퓨터
+		int myNum[] = new int[3]; //유저
+		
+		Method07.printArray(comNum);
+		Method07.printArray(comNum);
+		
+		//static이 아닐경우 객체를 생성하여, 객체명으로 메서드 호출  
+		Method07 me = new Method07();
+		me.randomArray(myNum);
+		
+		//사용자 번호 입력
+		//결과 출력
+		
+		Method07.check(myNum, comNum);
+
+
+	}
+	
+	//랜덤으로 배열을 중복되지 않게 생성
+	//Method07의  isContain 가져와서 사용
+	
+	
+	
+	
+	//스트라이크 개수를 카운트하는 메서드
+	/*
+	 * comNum, myNum를 주고 번호와 위치가 일치하면 count하는 메서드 
+	 * 리턴 타입 : int count를 리턴  
+	 */
+	//볼 개수를 카운트하는 메서드
+	/*
+	 * comNum, myNum를 주고 번호와 위치가 일치하면 count하는 메서드 
+	 * 리턴 타입 : int count를 리턴  
+	 */
+	 // 스트라이크 볼 개수 카운트 하는 메서드
+	public static void judge(int comNum[], int myNum[], int stk ,int ball)  {
+	
+		
+		for(int i=0; i<comNum.length; i++) {
+		for(int j=0; j<myNum.length; j++) {
+			if(comNum[i]==myNum[j]&&i==j) {
+				stk++;
+			}else if(comNum[i]==myNum[j]&&i != j) {
+				ball++;
+			}
+		}
+	}
+}
+
+
+
+
+
+
+}

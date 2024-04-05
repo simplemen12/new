@@ -1,0 +1,75 @@
+package day06;
+
+public class ArryCopy {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String arr[] = new String[10];
+		arr[0]="홍길동";
+		arr[1]="김영이";
+		arr[2]="박순이";
+		arr[3]="최영철";
+		arr[4]="김아람";
+		arr[5]="최찬우";
+		arr[6]="박기덕";
+		arr[7]="봉준호";
+		arr[8]="정하나";
+		arr[9]="김땡구";
+		
+		int arr1[] = new int[5];
+		int arr2[] = new int[5];
+		//두 객체의 주소를 확인
+		//System.out.println(arr);
+		//System.out.println(arr1);
+		//System.out.println(arr2);
+		
+		for(int i=0; i<arr.length; i++) {
+			System.out.print(arr[i]+" ");
+		}
+		System.out.println();
+		for(int i=0; i<arr1.length; i++) {
+			System.out.print(arr1[i]+" ");
+		}
+		System.out.println();
+		for(int i=0; i<arr2.length; i++) {
+			System.out.print(arr2[i]+" ");
+		}
+		
+		// arr의 값을 arr2로 복사
+		/*
+		 * for(int i=0; i<arr.length; i++) {
+			arr2[i+1] = arr[i];
+		}
+		 */
+		
+		
+		System.out.println();
+		for(int i=0; i<arr2.length; i++) {
+			System.out.print(arr2[i]+" ");
+		}
+		
+		
+		//arr를 arr3으로 복사
+		//arr3은 10개의 데이터를 담을 수 있는 배열로 생성  
+		
+		String arr3[] = new String[10];
+		
+		System.out.println();
+		
+		for(int i=0; i<arr.length; i++) {
+			arr3[i] = arr[i];
+		
+	
+		
+		}
+		System.out.println("향상된 for문");
+		for(String s : arr3) {
+			System.out.print(s);
+		}
+		
+		//system.arraycopy(이전배열, 시작번지, 새배열, 시작번지, 개수)
+		
+
+	}
+
+}

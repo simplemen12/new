@@ -1,0 +1,17 @@
+package day10;
+
+public class Class03 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
+
+//같은 패키지에서 같은 이름의 클래스를 사용하면 에러가 발생한다  
+
+Class Car1{
+	//멤버변수 name year color power speed 
+	//내 차량의 정보를 출력하는 메서드 
+}

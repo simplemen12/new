@@ -1,0 +1,27 @@
+package day06;
+
+public class 과제 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		/*
+		 * 숫자를 입력 받아서 입력받은 숫자를 꺼꾸로 출력. 각 자리의 합계 출력 
+		 * ex) 11456 => 출력 65411 => 6+5+4+1+1 => 결과값 출력 
+		 * ex) 19874 => 출력 47891 => 4+7+8+9+1 => 결과값 출력
+		 */
+		String email = "1234";
+		int e = email.indexOf("@");
+		int l ;
+		int i;
+		l = email.length();
+		
+		for(i=1; i<=email.length(); i++) {
+			//System.out.print(email.length()+" ");
+			System.out.print(email.charAt(email.length()-i)+" "); //
+			//System.out.print(email.substring(i-1,l-i)+" ");
+		}
+		
+
+	}
+
+}

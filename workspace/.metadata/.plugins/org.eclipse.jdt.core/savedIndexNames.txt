@@ -1,0 +1,5 @@
+INDEX VERSION 1.131+C:\Users\coldh\OneDrive\바탕 화면\수업\workspace\.metadata\.plugins\org.eclipse.jdt.core
+1865797976.index
+36848994.index
+985413812.index
+118949699.index

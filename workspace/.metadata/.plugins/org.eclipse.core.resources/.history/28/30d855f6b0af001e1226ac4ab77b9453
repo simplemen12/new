@@ -1,0 +1,14 @@
+package day06;
+
+public class 과제 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		/*
+		 * 숫자를 입력 받아서 입력받은 숫자를 꺼꾸로 출력.
+		 * ex) 11456 => 출력 65411
+		 */
+
+	}
+
+}

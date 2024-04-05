@@ -1,0 +1,14 @@
+package day10;
+
+import java.util.Scanner;
+
+public class 베이스볼게임답 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int comNum[] = new int[3]; //컴퓨터
+		int myNum[] = new int[3]; //유저
+		Scanner scan = new Scanner(System.in);
+	}
+
+}
