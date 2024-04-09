@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+
+        .box1{
+            width: 400px;
+            height: 300px;
+            border: 5px solid white;
+            
+            background-color:ivory; /* 배경 흰색으로 설정 */
+          
+            border-radius: 30px; /* 박스의 모서리를 둥글게 설정 */
+            text-align: center;
+            overflow: hidden; /* 내용이 넘치는 경우를 방지 */
+            margin: auto;
+            
+        }
+       .a,.b,.c{
+        margin: 10px 10px 10px 10px;
+        width: 300px;
+        height: 50px;
+
+        border-radius: 10px;
+
+        border: none;
+       }
+
+       body{
+            background-color: #72d9f0;
+        }
+        .c{
+            background: rgb(45, 236, 236);
+            color: aliceblue;
+        }
+
+        .d{
+            background: none;
+            color: gray;
+            border: none;
+        }
+
+    </style>
+</head>
+<body>
+
+
+    <form>
+
+        <div class="box1">
+
+
+
+            <input type="text" class="a" placeholder="아이디">
+            <input type="text" class="b"  placeholder="비밀번호">
+            <input type="submit" class="c" value="로그인" disabled>
+
+            <input type="submit" class="d" value="비밀번호를 잊어버리셨나요">
+            
+        </div>
+
+
+    </form>
+
+    <script>
+        //정규표현식
+        //disable = true 비활성화
+        //disable = false 활성화
+        const input = document.querySelectorAll('.text-field');
+        const btn = document.querySelector('btn');
+        console.log(input);
+        input[0].addEventListener('input',()=>{
+            if(input[1].value.length>7){
+                if(input[0].value.length >7){
+                btn.disabled = false;
+
+            }
+
+
+            }else{
+                btn.disabled = true;
+            }
+           
+        })
+
+        input[1].addEventListener('input',()=>{
+            
+        })
+
+    </script>
+    
+</body>
+</html>

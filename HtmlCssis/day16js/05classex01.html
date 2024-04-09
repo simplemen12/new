@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //class 객체 생성 / 일반 객체
+        //일반 객체
+        let myAccount = { 
+            name : 'hong',
+            balance:0,
+            //임금
+            deposit: function(amount){
+                this.balance+= amount;
+
+            } ,
+            
+            //출금 
+            withdraw: function(amount){
+                this.balance -= amount;
+            },
+            
+            //이체
+            transfer: function(amount, otherAccount){
+                this.balance-= amount;
+                otherAccount.balance+=amount;
+            }
+        }
+
+
+        let yourAccount = { 
+            name : 'hong',
+            balance:0,
+            //임금
+            deposit: function(amount){
+                this.balance+= amount;
+
+            } ,
+            
+            //출금 
+            withdraw: function(amount){
+                this.balance -= amount;
+            },
+            
+            //이체
+            transfer: function(amount, otherAccount){
+                this.balance-= amount;
+                otherAccount.balance+=amount;
+            }
+        }
+
+        //내 계좌에 임금 10000원 임금
+        console.log(myAccount.name,":",myAccount.balance);
+        myAccount.deposit(10000);
+        console.log(myAccount.name,":",myAccount.balance);
+        myAccount.withdraw(10000);
+        console.log(myAccount.name,":",myAccount.balance);
+        myAccount.transfer(9000,yourAccount);
+        console.log(yourAccount.name,":",myAccount.balance);
+
+
+        console.log('----------------------------------------');
+        //객체를 클래스로 변경
+  /*
+        
+         클래스 생성의 기본 문법
+         class MyClass{
+            //생성자 
+            constructor(param){  
+                ...
+            }
+
+            //메서드 정의 
+            methodName(){
+                ... 
+
+            }
+            methodName(){
+                ...
+            }
+            //getter /setter
+            get name(){
+                return this.name;
+
+            }
+            set name(value){
+                if(value.length < 4 ){
+                    alert('4글자 이상만 가능합니다.');
+                    return;
+                }
+                this.name = value;
+            }
+
+         }
+   
+  */
+ class bank{
+    constructor(name,balance){
+        this.name = name;
+        this.balance = balance;
+
+       function deposit(amount){
+                this.balance+= amount;
+
+            } 
+            
+            //출금 
+             function withdraw(amount){
+                this.balance -= amount;
+            }
+            
+            //이체
+             function transfer (amount, otherAccount){
+                this.balance-= amount;
+                otherAccount.balance+=amount;
+            }
+
+
+        let myAccount = { 
+            name : 'hong',
+            balance:0,
+            //임금
+        
+        }
+        let youAccount = { 
+            name : 'hong',
+            balance:0,
+            //임금
+       
+        }
+
+    }
+ }
+ console.log(myAccount);
+ //bank.myAccount.name='홍길동';
+ console.log(myAccount);
+
+
+ class BankAccount{
+    constructor(name,balance){
+        this.name = name;
+        this.balance = balance;
+
+    }
+
+     deposit(amount){
+                this.balance+= amount;
+                return this.balance;
+
+    } 
+    withdraw(amount){
+        this.balance -= amount;
+        return this.balance;
+
+    }
+    transfer(amount, youAccount){
+        this.balance -= amount;
+        youAccount.balance+= amount;
+
+    }
+
+
+ }
+
+
+ let leeAcc = new BankAccount('lee',1000);
+ let choiAcc = new BankAccount('choi',1000);
+
+ leeAcc.deposit(10000);
+ console.log(leeAcc.name,leeAcc.balance);
+
+
+        
+
+         
+
+    </script>
+</body>
+</html>

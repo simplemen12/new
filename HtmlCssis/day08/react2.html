@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            body{
+                margin: 0;
+                padding: 0;
+            }
+            div{
+                width: 100%;
+            }
+            .header{
+              height: 60px;
+              background-color: bisque;
+              line-height: 60px;  
+              font-size: 30px;
+              font-weight: 700;
+              padding-left: 40px;
+            }
+            /* medai query 변경내용 */
+
+            .main-image{
+                height: 300px;
+                background-image: url(../image/다운로드.jpeg);
+                background-position: center;
+                background-size: cover;
+            }
+            .description{
+                height: 300px;
+                background-color: white;
+                padding-left: 40px;
+            }
+            .description>p:first-child{
+                font-size: 16px;
+                font-weight: 700;
+                color: gray;
+                margin-top: 30px;
+                margin-bottom: 40px;
+            }
+            .description>p:nth-child(2){
+                font-size: 20px;
+                font-weight: 700;
+            }
+            .description>p:last-child{
+                font-size: 16px;
+            }
+            .sub-image{
+                height: 350px;
+                background-image: url(../image/가방.jpeg);
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+            .sub-image2{
+                height: 300px;
+                background-image: url(../image/paris.jpeg);
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+                text-align: center;
+                line-height: 300px;
+            }
+            .sub-image2>a{
+                border: 5px solid white;
+                padding: 10px 40px;
+                font-size: 16px;
+                font-weight: 700;
+                color: white;
+                text-decoration: none;
+            }
+            .sub-image3{
+                height: 200px;
+                background-image: url(../image/가방2.jpeg);
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+
+            @media screen and (min-width: 800px) {
+            .main-image{
+                height: 450px;
+                
+            }
+            .description{
+                height: 300px;
+                background-color: white;
+                padding-left: 40px;
+            }
+            .description>p:first-child{
+                font-size: 16px;
+                font-weight: 700;
+                color: gray;
+                margin-top: 30px;
+                margin-bottom: 40px;
+            }
+            .description>p:nth-child(2){
+                font-size: 20px;
+                font-weight: 700;
+            }
+            .description>p:last-child{
+                font-size: 16px;
+            }
+            .sub-image{
+                width: 50%;
+                height: 400px;
+                float: left;
+                background-image: url(../image/가방.jpeg);
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+            .sub-image2{
+                width: 50%;
+                height: 200px;
+                float: right;
+                background-image: url(../image/paris.jpeg);
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+                text-align: center;
+                line-height: 200px;
+            }
+            .sub-image2>a{
+                border: 5px solid white;
+                padding: 10px 40px;
+                font-size: 16px;
+                font-weight: 700;
+                color: white;
+                text-decoration: none;
+            }
+            .sub-image3{
+                width: 50%;
+                height: 200px;
+                float: right;
+                background-image: url(../image/가방2.jpeg);
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+        }
+
+            @media screen and (min-width:1200px) {
+            .main-image{
+                width: 50%;
+                height: 600px;
+                background-image: url(../image/다운로드.jpeg);
+                background-position: center;
+                background-size: cover;
+            }
+            .description{
+                height: 300px;
+                background-color: white;
+                padding-left: 40px;
+            }
+            .description>p:first-child{
+                font-size: 16px;
+                font-weight: 700;
+                color: gray;
+                margin-top: 30px;
+                margin-bottom: 40px;
+            }
+            .description>p:nth-child(2){
+                font-size: 20px;
+                font-weight: 700;
+            }
+            .description>p:last-child{
+                font-size: 16px;
+            }
+            .sub-image{
+                width: 25%;
+                height: 300px;
+                float: left;
+                background-image: url(../image/가방.jpeg);
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+            .sub-image2{
+                width: 25%;
+                height: 150px;
+                float: right;
+                background-image: url(../image/paris.jpeg);
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+                text-align: center;
+                line-height: 300px;
+            }
+            .sub-image2>a{
+                border: 5px solid white;
+                padding: 10px 40px;
+                font-size: 16px;
+                font-weight: 700;
+                color: white;
+                text-decoration: none;
+            }
+            .sub-image3{
+                width: 25%;
+                height: 150px;
+                float: right;
+                background-image: url(../image/가방2.jpeg);
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+            }
+            
+        </style>
+    </head>
+    <body>
+        <div class="header" id="top">IN'O</div>
+        <div class="main-image"></div>
+        <div class="description">
+            <p>Portfolio</p>
+            <p>Make Hardware Soft</p>
+            <p>1. 삶이 있는 한 희망은 있다 - 키케로1. 삶이 있는 한 희망은 있다 - 키케로1. 삶이 있는 한 희망은 있다 - 키케로1. 삶이 있는 한 희망은 있다 - 키케로1. 삶이 있는 한 희망은 있다 - 키케로</p>
+        </div>
+        <div class="sub-image"></div>
+        <div class="sub-image2">
+            <a href="#top">VIEW MORE</a>
+        </div>
+        <div class="sub-image3"></div>
+
+    </body>
+    </html>
+</body>
+</html>

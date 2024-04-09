@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+        향상된 for 
+    </h1>
+    <ul>
+        <li>
+            for of : 배열안의 내용을 탐색할 때 사용 []
+            for(let value of Array){
+                code;
+            }
+        </li>
+        <li>
+            for in : 객체 안의 내용을 탐색할 때 사용 { }
+            for(let value in Object){
+
+                <!-- value = key -->
+                code;
+            }
+        </li>
+        <li></li>
+    </ul>
+    
+   
+
+    <form action="">
+        <fieldset>
+            <legend>약수</legend>
+           
+            <input type="text" id="num"><br>
+          
+            
+            <button type="button" id="btn" onclick="div()">약수출력</button>
+        </fieldset>
+    </form>
+
+
+
+
+
+
+    <h3 id="result">
+        약수 값 출력 / 개수 <br>
+
+    </h3>
+
+
+    <script>
+        
+
+        function div(){
+
+            let num1 = parseInt(document.getElementById('num').value);
+
+            for(let i=1; i<=num1; i++) {
+			if(num1 % i == 0) {
+				console.log(i+"");
+
+                result.innerHTML += `<li>약수 : ${i}</li>  `;
+			}
+		}
+
+
+       
+        }
+
+
+
+
+
+		
+    </script>
+</body>
+</html>

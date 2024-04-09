@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .menu-box {
+    width: 300px;
+    height: auto; /* 자동으로 높이 조정 */
+    display: flex;
+    flex-direction: column; /* 세로로 배치 */
+}
+
+.menu {
+    width: 100%; /* 부모 요소인 .menu-box에 맞춤 */
+    height: 50px;
+    border: 1px solid black;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
+    line-height: 50px;
+    color: black;
+}
+
+.menu:hover {
+    background-color: yellow;
+}
+
+.s {
+    border-right: none;
+}
+.h{
+    
+    transform: translate(30%, -40%);
+}
+
+    </style>
+</head>
+<body>
+    <div class="menu-box">
+        <a href="" class="menu s">menu1</a>
+        <a href="" class="menu s">menu2</a>
+        <a href="" class="menu s">menu3</a>
+        <a href="" class="menu">menu4</a>
+        
+    </div>
+  <div class="h"><img src="의지.jpg"  width="500" height="700"></div> 
+    
+    
+</body>
+</html>

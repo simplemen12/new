@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="wapper">
+        <h2>여행 준비물 점검 목록</h2>
+        <form action="">
+            <input type="text" id="item" autofocus="true">
+            <button type="button" id="add">추가</button>
+        </form>
+    </div>
+
+    <div>
+        <ul id="itemList">
+            <li id="l1"></li>
+            <li id="l2"></li>
+            <li id="l3"></li>
+            <li id="l4"></li>
+            <li id="l5"></li>
+        </ul>
+    </div>
+
+    <script>
+
+       let list = '';
+
+       
+
+
+
+
+
+
+let count = 0;
+/*
+       document.getElementById('add').addEventListener('click',()=>{
+        list = document.getElementById('item').value;
+        console.log(list);
+        count++;
+
+        document.getElementById('l1').innerHTML += `<li>${list}<button type="button" id="x">x</button></li>`
+
+
+        });*/
+
+        document.getElementById('add').addEventListener('click',()=>{
+        list = document.getElementById('item').value;
+        console.log(list);
+        count++;
+
+        document.getElementById(`l${count}`).innerHTML += `<li>${list}<button type="button" id="x${count}">x</button></li>`
+
+
+        });
+        //배열은 스플라이스 삭제
+
+        document.getElementById('x').addEventListener('click',()=>{
+
+        });
+    </script>
+
+</body>
+</html>

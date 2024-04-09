@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+        json jv o n 자바 스크립트의 객체표기법
+    </h1>
+    <ul>
+        <li>
+            데이터 요청 및 응답처리에 필요한 데이터의 표준 형식을 제공하는 타입
+        </li>
+        <li>
+            백엔드 서버 언어 종류에 상관없이 데이터 송수신 단말 형식으로 통일
+        </li>
+        <li>
+            백엔드 서버에서는 무조건 string 처리 화면은 object로 처리
+        </li>
+        <li>
+            서버로 데이터를 보낼때 > object = > string > json.stringify(jsobject);
+        </li>
+        <li>
+            서버로 부터 데이터를 받을 때 > string -> object > json.parse(stringData);
+        </li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+
+    <script>
+        const cake = {
+            id:'1234',
+            type:'donut',
+            name:'cake',
+            image:{
+                url:'img/001.jpg',
+                width:'200',
+                heigjt:'20'
+
+            },
+            thumnail:{
+                url:'img/th/001.jpg',
+                width:'20',
+                heigjt:'5'
+
+            }
+        };
+
+        console.log(cake);
+        //cake의 object를 string으로 변환
+        let cakeStr = JSON.stringify(cake);
+        console.log(cakeStr);
+
+        //서버에서 보내는 json 타임의 string 데이터
+        const stringData = '{"id":"1234","type":"donut","name":"cake","image":{"url":"img/001.jpg","width":"200","heigjt":"20"},"thumnail":{"url":"img/th/001.jpg","width":"20","heigjt":"5"}}';
+        console.log(stringData);
+        let parseData=JSON.parse(stringData);
+        console.log(parseData);
+
+        console.log("-----------------");
+        
+
+        //콘솔에 key:value 형식을 출력해보기
+        //object = > for in 
+        //object =>  for in => key추출
+        //object[key] = > value 추출
+        //if key == 'image' ||
+        //for
+        for (let key in cake) {
+            if(key == 'image'){
+                console.log(`${key}: ${cake[key]}`);
+
+            }
+    
+        
+        }
+
+        for(const key in perseData){
+            console.log(key);
+            //let innerObject = parseData[key];
+
+            if(key ==  ' image' || key == 'thumbnail'){
+
+            for(const k in innerObject){
+                let innerObject = parseData[key];
+                console.log(k+":"+innerObject[k]);
+
+            }
+        }else{
+            console.log(key+":"+parseData[key]);
+        }
+
+        }
+    
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        
+       
+    </style>
+</head>
+<body>
+    <h1>가위바위보를 10번 하여 승률 출력</h1>
+    <button type="button" id="btn">승률출력</button>
+
+
+    <button type="button" id="r"> <img id="i1" style="width: 100px; height: 100px" src="../day14js/3.jpg">바위</button>
+    <button type="button" id="s"><img id="i2" style="width: 100px; height: 100px" src="../day14js/2.jpg">가위</button>
+    <button type="button" id="p"><img id="i3" style="width: 100px; height: 100px" src="../day14js/1.jpg">보</button>
+    <h3>
+         <span id="result"></span>
+    </h3>
+
+    <script>
+        //가위바위보 게임
+        //com = random / player = random
+        //1= 가위, 2=바위, 3=보
+        //승률을 계산 (승 / 10-무)) /  * 100 소수점 2자리까지 표현
+        //콘솔에 com과 player 출력 
+        //콘솔에 승 무 패
+
+        let com = 0;
+        let player = 0;
+
+        let win = 0;
+        let lose = 0;
+        let tie = 0;
+
+        /*
+        for(let i=0; i<10; i++){
+            com = Math.floor(Math.random()*3);
+            player = Math.floor(Math.random()*3);
+            console.log(com,player);
+
+            if(com === player){
+                tie++;   
+                
+                console.log( `player승리  현재스코어 win ${win} lose ${lose} tie ${tie}`  )
+            
+            };
+
+            if(com===0 && player===1){
+                win++;   
+                
+                console.log( `player승리  현재스코어 win ${win} lose ${lose} tie ${tie}`  )
+            
+            };
+
+           
+            if(com===1 && player===0){
+                lose++;   
+                
+                console.log( `player승리  현재스코어 win ${win} lose ${lose} tie ${tie}`  )
+            
+            };
+
+
+            if(com===2 && player===1){
+                win++;   
+                
+                console.log( `player승리  현재스코어 win ${win} lose ${lose} tie ${tie}`  )
+            
+            };
+
+           
+            if(com===1 && player===2){
+                lose++;   
+                
+                console.log( `player승리  현재스코어 win ${win} lose ${lose} tie ${tie}`  )
+            
+            };
+
+
+
+            if(com===0 && player===2){
+                lose++;   
+                
+                console.log( `player승리  현재스코어 win ${win} lose ${lose} tie ${tie}`  )
+            
+            };
+
+           
+            if(com===2 && player===0){
+                win++;   
+                
+                console.log( `player승리  현재스코어 win ${win} lose ${lose} tie ${tie}`  )
+            
+            };
+
+
+
+            //0은 가위 1은 바위 2는 보
+
+        }
+        */
+        
+
+         //승률을 계산 (승 / 10-무)) /  * 100 소수점 2자리까지 표현 winRate = (double) wins / totalGames * 100;
+
+       var total =  0;
+
+       
+       //double(total);
+       console.log(total);
+
+    document.getElementById('btn').addEventListener('click',()=>{
+
+        var total =  win/(win+lose+tie)*100;
+            
+    result.innerHTML = total.toFixed(2);
+    });
+
+
+
+    document.getElementById('r').addEventListener('click',()=>{
+            
+    game1();
+
+    result.innerHTML = `승률 ${total}현재스코어 win ${win} lose ${lose} tie ${tie}`;
+    });
+
+    document.getElementById('s').addEventListener('click',()=>{
+            
+    game2();
+    
+    result.innerHTML = `승률 ${total}현재스코어 win ${win} lose ${lose} tie ${tie}`;
+    });
+
+
+    document.getElementById('p').addEventListener('click',()=>{
+            
+    game3();
+            
+    result.innerHTML = `승률 ${total}현재스코어 win ${win} lose ${lose} tie ${tie}`;
+    });
+
+    
+
+
+
+
+
+
+        /*
+        <button type="button" id="r">바위</button>
+     <button type="button" id="s">가위</button>
+      <button type="button" id="p">보</button>
+        */
+
+
+
+
+ //가위바위보 0 1 2
+        function game1(){
+
+            //플레이어가 누르면 변수 입력 및 com랜덤변수 생성 및 비교
+            if(id="r"){ player=0 };
+
+
+            com = Math.floor(Math.random()*3);
+            
+            console.log(com,player);
+
+            if(com === player){
+                tie++;   
+                
+                console.log( `player승리  현재스코어 win ${win} lose ${lose} tie ${tie}`  )
+            
+            };
+
+           
+
+           
+            if(com===1 && player===0){
+                lose++;   
+                
+                console.log( `player승리  현재스코어 win ${win} lose ${lose} tie ${tie}`  )
+            
+            };
+        
+          
+
+           
+            if(com===2 && player===0){
+                win++;   
+                
+                console.log( `player승리  현재스코어 win ${win} lose ${lose} tie ${tie}`  )
+            
+            };
+
+           
+
+
+
+            //0은 가위 1은 바위 2는 보
+
+        }
+    
+          
+           
+
+        
+        function game2(){
+            if(id="r"){ player=1 };
+
+            com = Math.floor(Math.random()*3);
+            
+            console.log(com,player);
+            if(com === player){
+                tie++;   
+                
+                console.log( `player승리  현재스코어 win ${win} lose ${lose} tie ${tie}`  )
+            
+            };
+
+           
+
+           
+            if(com===0 && player===1){
+                win++;   
+                
+                console.log( `player승리  현재스코어 win ${win} lose ${lose} tie ${tie}`  )
+            
+            };
+        
+          
+
+           
+            if(com===2 && player===1){
+                lose++;   
+                
+                console.log( `player승리  현재스코어 win ${win} lose ${lose} tie ${tie}`  )
+            
+            };
+
+           
+
+            
+           
+           
+
+        }
+
+
+        function game3(){
+            if(id="r"){ player=2 };
+
+            com = Math.floor(Math.random()*3);
+            
+            console.log(com,player);
+
+            if(com === player){
+                tie++;   
+                
+                console.log( `player승리  현재스코어 win ${win} lose ${lose} tie ${tie}`  )
+            
+            };
+
+           
+
+           
+            if(com===1 && player===2){
+                win++;   
+                
+                console.log( `player승리  현재스코어 win ${win} lose ${lose} tie ${tie}`  )
+            
+            };
+        
+          
+
+           
+            if(com===0 && player===2){
+                lose++;   
+                
+                console.log( `player승리  현재스코어 win ${win} lose ${lose} tie ${tie}`  )
+            
+            };
+
+           
+
+          
+
+        }
+
+
+
+  
+       
+
+    </script>
+</body>
+</html>

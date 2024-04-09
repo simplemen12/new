@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #h3 {
+            color: white;
+            background-color: brown;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>
+        setInterval(callbACK function, interval duration);
+        duration을 주기적으로 callbACK fuction을 호출
+    </h1>
+    
+    <h3 id="h3">
+        setInterval...!!!
+    </h3>
+
+    <button type="button" id="start">start</button>
+    <button type="button" id="end">end</button>
+
+    <script>
+        let intervalObj;
+
+        function changeColor() {
+            let h3 = document.getElementById('h3');
+            h3.style.color = (h3.style.color == 'white' ? 'black' : 'white');
+            h3.style.backgroundColor = (h3.style.backgroundColor == 'brown' ? 'yellow' : 'brown');
+        }
+
+        function startColor() {
+            intervalObj = setInterval(changeColor, 500);
+        }
+
+        function stopColor() {
+            clearInterval(intervalObj);
+        }
+
+        document.getElementById('start').addEventListener('click', startColor);
+        document.getElementById('end').addEventListener('click', stopColor);
+    </script>
+</body>
+</html>

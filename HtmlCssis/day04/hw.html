@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+
+    <style>
+       
+          .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .box {
+            width: 250px;
+            height: 100px;
+            background-color: white;
+            text-align: center;
+            color: black;
+            font-size: 20px;
+            font-weight: 700;
+            border: 5px solid black;
+            margin: 10px auto 30px;
+        }
+
+        .box1 {
+            border: none;
+            background-color: white;
+            color: brown;
+            margin: 10px;
+        }
+    </style>
+
+</head>
+<body>
+   
+    <div class="container">
+        <div class="box"><h1>Travel</h1></div>
+    
+        <ul>
+            <button class="box1" onclick="openPage('home.html')">Home</button>
+            <button class="box1" onclick="openPage('서울.html')">Seoul</button>
+            <button class="box1" onclick="openPage('도쿄.html')">Tokyo</button>
+            <button class="box1" onclick="openPage('파리.html')">Paris</button>
+        </ul>
+        <img src="home.jpg"  width="500" height="700">
+    </div>
+
+    <script>
+        function openPage(pageName) {
+            window.location.href = pageName;
+        }
+    </script>
+
+</body>
+</html>

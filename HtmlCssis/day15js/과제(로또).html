@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>1-45까지 중복되지 않게 숫자 6개를 랜덤으로 추출 => 출력
+        set 객체를 사용하여 생성
+    </h1>
+
+    <button id="rn">랜덤번호 6자리 생성(출력)</button>
+    <h2 id="r1"></h2>
+
+    <button id="rotto">당첨번호 7자리(마지막 번호는 보너스번호 생성 출력)</button>
+    <h2 id="r2"></h2>
+
+    <button id="identify">결과확인</button>
+    <h2 id="r3"></h2>
+
+
+
+
+    <script>
+        comNum = [0, 0, 0, 0, 0, 0]; // 배열 초기화
+
+        document.getElementById('rn').addEventListener('click',()=>{
+
+            console.log("+");
+            
+
+            for(let i =0; i<comNum.length; i++) {
+                console.log("++");
+			comNum[i] = Math.floor(Math.random()*45)+1;
+
+			for(let j=0; j<i; j++) {
+                console.log("+++");
+				if(comNum[i]==comNum[j]) {
+					i--;
+					break;
+				}
+                console.log(comNum);
+                r1.innerHTML = comNum;
+			}
+			}
+		
+		//결과 체크
+        comNum.keys().forEach(function(v){
+            console.log("=");
+            console.log(v);
+        })
+		
+        console.log(comNum);
+            r1.innerHTML = comNum;
+
+        });
+
+
+
+        document.getElementById('rotto').addEventListener('click',()=>{
+           
+            comNum1 = [0, 0, 0, 0, 0, 0, 0]; // 배열 초기화
+
+
+            
+
+        
+
+            for(let i =0; i<comNum.length; i++) {
+                console.log("++");
+			comNum1[i] = Math.floor(Math.random()*45)+1;
+
+			for(let j=0; j<i; j++) {
+                console.log("+++");
+				if(comNum1[i]==comNum1[j]) {
+					i--;
+					break;
+				}
+                console.log(comNum1);
+                r2.innerHTML = comNum1;
+			}
+			}
+
+            //보너스 넘버
+		
+		//결과 체크
+        let bonus = 0;
+            bonus = Math.floor(Math.random()*45)+1;
+        comNum1.keys().forEach(function(v){
+            
+            while(bonus==v){ //만약 같다면 
+                bonus = Math.floor(Math.random()*45)+1; // 다시 랜덤수
+                console.log("랜덤수가 중복");
+            }
+            console.log("랜덤수가 중복 없어용~");
+            console.log(v);
+        })
+       
+        comNum1[comNum1.length-1] = bonus;
+		
+        console.log(comNum1);
+            r2.innerHTML = comNum1;
+
+        });
+            
+
+   let matchCount = 0;
+
+        document.getElementById('identify').addEventListener('click',()=>{
+            for(let i=0; i<comNum1.length; i++) {
+			
+			if(comNum1[i] == comNum[0] || comNum1[i] == comNum[1] || comNum1[i] == comNum[2] || comNum1[i] == comNum[3] || comNum1[i] == comNum[4] || comNum1[i] == comNum[5] || comNum1[i] == comNum[6] ) {
+				matchCount++;
+				
+				
+			}
+			
+		}
+		if(matchCount==7) {
+			console.log("당첨");
+		}
+	
+
+            document.getElementById('r3').innerHTML = `당첨 번호와 일치하는 번호 개수: ${matchCount}개`;
+        });
+
+       
+
+        
+    </script>
+
+    
+</body>
+</html>

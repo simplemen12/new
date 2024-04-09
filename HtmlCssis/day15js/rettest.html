@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   
+
+
+    파일명 : <input type="text" id="fileName">
+
+    <button type="button" id="btn">전송</button>
+
+    <h3 id="result"></h3>
+
+    
+
+<script>
+
+    /*
+    
+    // let testText = 'This is JavaScript rRegular Expression'
+       // console.log(TextText.match(/is/g));
+
+
+        
+        const fileName = ['abc.jpg','main.gif','gg.png'];
+         //   //사이의 텍스트를 찾아줌 
+
+        for(let file of fileName){
+
+            if(fileName.match(/(jpg|jpeg|png|gif)/i)){
+                console.log('이미지파일 :'+file);
+
+            }else{
+                console.log('그 외 파일:'+file);
+            }
+
+        }
+*/
+
+let file2 = document.getElementById('fileName').value;
+
+function search(){
+    console.log('11');
+    
+
+    // 확장자 추출
+    let extension = file2.split('.').pop().toLowerCase(); // 파일 이름을 .으로 분리하여 마지막 요소(확장자) 추출 후 소문자로 변환
+
+    // 이미지 파일 여부 확인
+    if(extension === 'jpg' || extension === 'jpeg' || extension === 'png' || extension === 'gif'){
+        console.log('이미지 파일: ' + file2);
+        let file3 = file2;
+    } else {
+        console.log('그 외 파일: ' + file2);
+        let file3 = file2;
+    }
+
+
+
+
+
+
+
+}
+
+
+document.getElementById('btn').addEventListener('search',()=>{
+
+result.innerHTML = file3;
+});
+
+
+
+</script>
+    
+</body>
+</html>

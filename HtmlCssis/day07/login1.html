@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body{
+            background-color: skyblue;
+
+        }
+        .container{
+            width: 300px;
+            background-color: aquamarine;
+            /* 화면 정중앙 */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            text-align: center;
+            border-radius: 10px;
+            padding: 20px 30px;
+        }
+        .text-field, .btn{
+            width: 100%;
+            padding: 10px;
+            font-size: 15px;
+            box-sizing: border-box;
+        }
+        .btn{
+            background-color: darkgray;
+            color: aliceblue;
+            font-weight: 700;
+            cursor: pointer;
+        }
+        .link{
+            margin-top: 30px;
+        }
+        .link>a{
+            color: gray;
+            text-decoration: none;
+            font-size: 13px;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form action="">
+            <input type="text" class="text-field" name="id" placeholder="아이디">
+            <input type="password" class="text-field" name="pw" placeholder="비밀번호">
+            <input type="submit" class="btn" value="로그인">
+
+
+
+
+
+        </form>
+
+
+    </div>
+   
+</body>
+</html>

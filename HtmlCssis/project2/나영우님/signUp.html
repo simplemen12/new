@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<!-- HTML 문서의 유형을 정의합니다. -->
+<html lang="en">
+<!-- HTML 문서의 시작을 나타냅니다. 여기서 lang="en"은 문서의 언어를 영어로 설정합니다. -->
+<head>
+    <!-- HTML 문서의 헤더를 정의합니다. 여기서는 문자 인코딩, 뷰포트 설정, 제목 설정, Google Fonts 및 CSS 파일 링크가 포함됩니다. -->
+    <meta charset="UTF-8">
+    <!-- 문자 인코딩을 UTF-8로 설정합니다. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 뷰포트 설정을 지정하여 반응형 웹페이지를 구현합니다. -->
+    <title>Document</title>
+    <!-- 문서의 제목을 설정합니다. -->
+    <link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&display=swap" rel="stylesheet">
+    <!-- Google Fonts를 사용하기 위한 링크를 설정합니다. -->
+    <link rel="stylesheet" href="reset.css">
+    <!-- 리셋 CSS 파일을 연결합니다. -->
+    <link rel="stylesheet" href="signUp.css">
+    <!-- 회원가입 폼을 위한 CSS 파일을 연결합니다. -->
+</head>
+<body>
+<!-- HTML 문서의 본문을 시작합니다. -->
+<header class="header">
+    <!-- 헤더 요소를 정의합니다. 여기서는 로고, 메뉴, 로그인 및 회원가입 등이 포함됩니다. -->
+    <div class="headArea">
+        <!-- 헤더 영역을 정의합니다. -->
+        <div class="hLogo">
+            <!-- 로고를 나타내는 요소입니다. -->
+            <a href="main.html"><img src="" alt="메인로고"></a>
+            <!-- 메인 페이지로 이동하는 링크가 포함된 이미지 로고입니다. -->
+        </div>
+        <nav class="hMenu">
+            <!-- 메뉴를 나타내는 요소입니다. -->
+            <div class="menu">
+                <!-- 메뉴 항목을 나타내는 요소입니다. -->
+                <ul class="depth1">
+                    <!-- 주요 메뉴 항목을 나타내는 요소입니다. -->
+                    <li><a href="javascript:gotoMenu(1);" class="dth1 ">주문/결제</a></li>
+                    <!-- 주문/결제 메뉴로 이동하는 링크입니다. -->
+                    <li><a href="/kor/store/main.do" class="dth1 ">나만의 메뉴</a></li>
+                    <!-- 나만의 메뉴 페이지로 이동하는 링크입니다. -->
+                    <li><a href="/kor/promotion/list.do" class="dth1  ">이벤트</a></li>
+                    <!-- 이벤트 페이지로 이동하는 링크입니다. -->
+                    <li><a href="/kor/story/main.do" class="dth1  ">고객지원</a></li>
+                    <!-- 고객지원 페이지로 이동하는 링크입니다. -->
+                </ul>
+            </div>
+            <div class="util">
+                <!-- 유틸리티 메뉴를 나타내는 요소입니다. -->
+                <a href="login.html" class="mLogin" title="임차문의로 이동">로그인</a>
+                <!-- 로그인 페이지로 이동하는 링크입니다. -->
+                <a href="/kor/story/people/recruit.do" class="mSignin" title="인재채용으로 이동">회원가입</a>
+                <!-- 회원가입 페이지로 이동하는 링크입니다. -->
+                <a href="main_eng.html" class="lang" title="영문사이트로 이동">ENG</a>
+                <!-- 영문 사이트로 이동하는 링크입니다. -->
+            </div>
+        </nav>
+    </div>
+</header>
+<!-- 헤더를 닫습니다. -->
+<div class="signup container">
+    <!-- 회원가입 폼을 감싸는 컨테이너를 정의합니다. -->
+    <h2>회원가입 페이지</h2>
+    <!-- 제목을 나타냅니다. -->
+    <form id="signupForm">
+        <!-- 회원가입 폼을 정의합니다. -->
+        <div class="input-container">
+            <!-- 입력 컨테이너를 정의합니다. -->
+            <input type="text" id="username" name="username" class="input-field" placeholder="아이디" required>
+            <!-- 아이디 입력 필드를 정의합니다. -->
+            <button id="checkDuplicateBtn" class="check-duplicate-btn">중복 확인</button>
+            <!-- 중복 확인 버튼을 정의합니다. -->
+        </div>
+        <div class="error-message" id="usernameError"></div>
+        <!-- 아이디 입력 오류 메시지를 나타냅니다. -->
+        <div>
+            <input type="email" id="emailPrefix" name="emailPrefix" class="input-field" placeholder="이메일" required>
+            <!-- 이메일 입력 필드를 정의합니다. -->
+            <div class="error-message" id="emailError"></div>
+            <!-- 이메일 입력 오류 메시지를 나타냅니다. -->
+        </div>
+        <div>
+            <input type="password" id="password" name="password" class="input-field" placeholder="비밀번호" required>
+            <!-- 비밀번호 입력 필드를 정의합니다. -->
+            <div class="error-message" id="passwordError"></div>
+            <!-- 비밀번호 입력 오류 메시지를 나타냅니다. -->
+        </div>
+        <div>
+            <input type="password" id="confirmPassword" name="confirmPassword" class="input-field" placeholder="비밀번호 확인" required>
+            <!-- 비밀번호 확인 입력 필드를 정의합니다. -->
+            <div class="error-message" id="confirmPasswordError"></div>
+            <!-- 비밀번호 확인 입력 오류 메시지를 나타냅니다. -->
+        </div>
+        <input type="submit" value="회원가입" class="submit-btn">
+        <!-- 회원가입 버튼을 정의합니다. -->
+        <div class="link">
+            <!-- 링크를 나타내는 요소입니다. -->
+            <div class="alternative-login">
+                <!-- 대체 로그인 방식을 나타내는 요소입니다. -->
+                <p>다른 방식으로 로그인</p>
+                <!-- 문구를 나타냅니다. -->
+                <div>
+                    <!-- 다른 로그인 방식을 나타내는 요소입니다. -->
+                    <a href="">
+                        <!-- 페이스북 로그인 버튼입니다. -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+                            <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"/>
+                        </svg>
+                    </a>
+                    <a href="">
+                        <!-- 구글 로그인 버튼입니다. -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-google" viewBox="0 0 16 16">
+                            <path d="M15.545 6.558a9.4 9.4 0 0 1 .139 1.626c0 2.434-.87 4.492-2.384 5.885h.002C11.978 15.292 10.158 16 8 16A8 8 0 1 1 8 0a7.7 7.7 0 0 1 5.352 2.082l-2.284 2.284A4.35 4.35 0 0 0 8 3.166c-2.087 0-3.86 1.408-4.492 3.304a4.8 4.8 0 0 0 0 3.063h.003c.635 1.893 2.405 3.301 4.492 3.301 1.078 0 2.004-.276 2.722-.764h-.003a3.7 3.7 0 0 0 1.599-2.431H8v-3.08z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<!-- 회원가입 폼을 감싸는 컨테이너를 닫습니다. -->
+<!-- JavaScript 코드가 이어집니다. -->
+<script>
+    // 페이지 로드 완료시 실행됩니다.
+
+    /*
+    // 페이지 로드 완료시 실행
+      
+        페이지 로드 완료란 HTML 문서와 문서에 연결된 모든 자원(스타일 시트, 이미지, 스크립트 파일 등)이
+         브라우저에 의해 로드되고 파싱된 상태를 말합니다.
+
+         
+DOM은 Document Object Model의 약자로, HTML, XML 또는 XHTML 문서의 프로그래밍 인터페이스를 의미합니다. 
+이는 문서의 구조화된 표현을 제공하여 프로그래밍 언어가 문서 구조, 스타일, 내용 등을 변경할 수 있게 합니다.
+
+DOM은 트리 구조로 구성되어 있으며, 각 요소는 노드로 표현됩니다. 주요 노드 유형에는 다음과 같은 것들이 있습니다:
+
+문서 노드(Document Node): 문서 자체를 나타냅니다. HTML 문서의 경우 <html> 태그가 문서 노드에 해당합니다.
+요소 노드(Element Node): HTML 요소를 나타냅니다. 예를 들어 <div>, <p>, <span>과 같은 것들이 요소 노드입니다.
+속성 노드(Attribute Node): HTML 요소의 속성을 나타냅니다. 예를 들어 <div id="myDiv">에서 id 속성은 속성 노드입니다.
+텍스트 노드(Text Node): HTML 요소의 텍스트 내용을 나타냅니다. 예를 들어 <p>안의 "Hello, World!"는 텍스트 노드입니다.
+DOM은 브라우저에 의해 자동으로 생성되며, 자바스크립트를 사용하여 이 DOM에 접근하고 조작할 수 있습니다.
+ 이를 통해 스크립트는 문서의 내용, 구조 및 스타일을 동적으로 변경할 수 있습니다. 이는 웹 페이지의 동적인 동작 및 
+ 사용자와의 상호작용을 구현하는 데 중요한 역할을 합니다.
+    */
+    document.addEventListener('DOMContentLoaded', function () {
+        // 눈송이 애니메이션을 추가합니다.
+        const snowflakeCount = 40; // 눈송이 개수를 설정합니다.
+        const container = document.body; // 눈송이를 추가할 컨테이너를 설정합니다.
+        for (let i = 0; i < snowflakeCount; i++) { // 눈송이 개수만큼 반복합니다.
+            const snowflake = document.createElement('div'); // 눈송이 요소를 생성합니다.
+            snowflake.className = 'snowflake'; // 눈송이의 클래스를 설정합니다.
+            snowflake.style.left = Math.random() * 100 + 'vw'; // 눈송이의 가로 위치를 랜덤으로 설정합니다.
+            snowflake.style.animationDuration = (Math.random() * 5 + 5) + 's'; // 눈송이의 애니메이션 지속 시간을 랜덤으로 설정합니다.
+            container.appendChild(snowflake); // 눈송이를 컨테이너에 추가합니다.
+        }
+
+        // 줌 효과를 추가합니다.
+        const zoomElements = document.querySelectorAll('.zoom-effect'); // 줌 효과를 적용할 요소들을 선택합니다.
+        zoomElements.forEach(element => { // 선택한 요소들에 대해 반복합니다.
+            element.addEventListener('mouseenter', function () { // 요소에 마우스가 진입했을 때의 이벤트를 추가합니다.
+                element.style.transform = 'scale(1.1)'; // 요소의 크기를 확대합니다.
+            });
+            element.addEventListener('mouseleave', function () { // 요소에서 마우스가 빠져나갔을 때의 이벤트를 추가합니다.
+                element.style.transform = 'scale(1)'; // 요소의 크기를 원래대로 복원합니다.
+            });
+        });
+    });
+
+    // 마우스 클릭 이벤트를 추가합니다.
+    document.addEventListener('click', function (event) {
+        // 클릭 위치에 닭 이미지를 생성합니다.
+        const chick = document.createElement('div'); // 닭 요소를 생성합니다.
+        chick.className = 'chick'; // 닭의 클래스를 설정합니다.
+        chick.style.position = 'fixed'; // 닭의 위치를 고정시킵니다.
+        chick.style.left = (event.clientX - 25) + 'px'; // 닭의 가로 위치를 클릭한 위치로 설정합니다.
+        chick.style.top = (event.clientY - 25) + 'px'; // 닭의 세로 위치를 클릭한 위치로 설정합니다.
+        chick.style.width = '97px'; // 닭의 너비를 설정합니다.
+        chick.style.height = '97px'; // 닭의 높이를 설정합니다.
+        chick.style.background = 'url("https://media4.giphy.com/media/sBVesL6N8u3qKfF95b/200w.webp") no-repeat'; // 닭의 배경 이미지를 설정합니다.
+        chick.style.backgroundSize = 'cover'; // 배경 이미지를 커버하도록 설정합니다.
+        chick.style.zIndex = '5000'; // 닭의 층 순서를 설정합니다.
+        document.body.appendChild(chick); // 닭을 본문에 추가합니다.
+
+        // 일정 시간 후 닭 이미지를 제거합니다.
+        setTimeout(function () {
+            chick.remove(); // 닭을 제거합니다.
+        }, 3000);
+    });
+
+    // 중복 확인 버튼 클릭 이벤트를 추가합니다.
+    const checkDuplicateBtn = document.getElementById('checkDuplicateBtn'); // 중복 확인 버튼을 선택합니다.
+    checkDuplicateBtn.addEventListener('click', function (event) { // 중복 확인 버튼에 클릭 이벤트를 추가합니다.
+        event.preventDefault(); // 기본 동작을 중지합니다.
+        // 입력된 아이디를 가져옵니다.
+        const usernameInput = document.getElementById('username');
+        const username = usernameInput.value;
+        // 로컬 스토리지에서 아이디를 확인합니다.
+        const storedUsername = localStorage.getItem('username');
+
+        // 아이디 중복 여부를 확인하고 메시지를 출력합니다.
+        if (storedUsername === username) {
+            alert('이미 동일한 아이디가 존재합니다.');
+        } else {
+            // 중복되지 않으면 로컬 스토리지에 아이디를 저장하고 메시지를 출력합니다.
+            localStorage.setItem('username', username);
+            alert('사용 가능한 아이디입니다.');
+        }
+    });
+
+    // 회원가입 폼 제출 이벤트를 추가합니다.
+    const signupForm = document.getElementById('signupForm'); // 회원가입 폼을 선택합니다.
+    signupForm.addEventListener('submit', function (event) { // 회원가입 폼에 제출 이벤트를 추가합니다.
+        event.preventDefault(); // 기본 동작을 중지합니다.
+        // 회원가입 완료 메시지를 출력하고 폼을 초기화합니다.
+        alert('회원가입이 완료되었습니다.');
+        signupForm.reset(); // 폼을 초기화합니다.
+    });
+</script>
+</body>
+</html>
+
+    
+
+

@@ -1,0 +1,236 @@
+
+/*
+  <!-- 
+        가장좁을 때
+        min-width : 800px
+        min-width : 1200px
+     -->
+    
+
+
+         <!-- 
+        media-query : 반응형 화면을 만들기 위한 태그
+        max-width / min-width를 사용하여 디스플레이 사이즈에 따라
+        화면의 배치 (layout)을 변경하는 태그
+        폰 320px / pad 768px / display 800px  1280px 일반적
+
+        max-width : 화면의 최대 너비를 조건으로 하여 미디어 쿼리를 작성
+        - 가장 큰 화면 사이즈의 레이아웃을 기본으로 하고, 점차 축소하는 형태로
+        css를 작성
+        min-width : 화면의 너비를 최소 너비를 조건으로 하여 미디어 쿼리를 작성
+        - 작은 화면 사이즈를 기본으로 하여 점차 확장되어가는 형태로 작성
+     -->
+*/
+
+
+
+
+.title{
+    font-size: 40px;
+}
+
+
+ul{
+    list-style:none;
+}
+
+
+
+body{
+    margin: 0;
+    padding: 0;
+}
+div{
+    width: 100%;
+}
+.header{
+
+   
+    height: 60px;
+    background-color: black;
+}
+.header>h1{
+    margin-left: 20px;
+    margin-top: 0px;
+    color: white;
+}
+.main-img{
+    height: 300px;
+    background-color: antiquewhite;
+}
+.main-img>img{
+    width: 100%; /*이미지크기*/
+    height: 100%;
+}
+.subject{
+    float: left;
+    width: 100%;
+    height: 350px;
+    background-color: white;
+}
+.subject>img{
+    width: 100%; /*이미지크기*/
+    height: 100%;
+
+}
+
+
+
+
+#p {
+    margin-top: 30px;
+    font-size: 30px; /* 폰트 크기 변경 */
+    color: #4a4a4a;
+    font-weight: bold; /* 글자 굵기 변경 */
+    /* 원하는 스타일 속성을 추가로 지정할 수 있습니다. */
+}
+#m{
+    margin-top: 10px;
+    font-size: 20px;
+    color: #1b1b1b;
+}
+#t{
+    font-size: 16px;
+    color: #7a7a7a;
+    margin-right: 30px;
+    margin-bottom: 30px;
+}
+
+
+.content{
+    height: 700px;
+    float: left;
+    background-color: black;
+   
+}
+.content>img{
+    width: 100%; /*이미지크기*/
+    height: 100%;
+}
+
+.sub{
+    height: 700px;
+
+    background-color: brown;
+}
+.sub>img{
+    width: 100%; /*이미지크기*/
+    height: 100%;
+}
+.footer{
+    height: 200px;
+    background-color: cadetblue;
+}
+
+@media screen and (max-width : 600px) {
+    .header{
+        height: 60px;
+    }
+    .main-img{
+        height: 500px;
+    }
+    .subject{
+        float: left;
+        width: 100%;
+        height: 350px;
+    }
+    .content{
+        width: 100%;
+        float: left;
+        height: 400px;
+    }
+    .sub{
+        width: 50%;
+        float: right;
+        height: 400px;
+    }
+    .footer{
+        height: 200px;
+        clear: both;
+    }
+}
+
+@media screen and (min-width:800px) {
+    .header{
+        height: 60px;
+    }
+    .main-img{
+        height: 500px;
+    }
+    .subject{
+        width: 100%;
+        height: 350px;
+    }
+    .content{
+        width: 50%;
+        float: left;
+        height: 400px;
+    }
+    .sub{
+        width: 50%;
+        float: right;
+        height: 400px;
+    }
+    .footer{
+        height: 200px;
+        clear: both;
+    }
+}
+
+@media screen and (min-width:1000px) {
+    .header{
+        height: 60px;
+    }
+    .main-img{
+        height: 500px;
+    }
+    .subject{
+        width: 100%;
+        height: 350px;
+    }
+    .content{
+        width: 50%;
+        float: left;
+        height: 400px;
+    }
+    .sub{
+        width: 50%;
+        float: right;
+        height: 400px;
+    }
+    .footer{
+        height: 200px;
+        clear: both;
+    }
+}
+
+
+@media screen and (min-width:1200px) {
+    .header{
+        height: 60px;
+    }
+    .main-img{
+        width: 50%;
+        height: 800px;
+        float: left;
+    }
+    .subject{
+        width: 50%;
+        height: 450px;
+        float: left;
+    }
+    .content{
+        width: 25%;
+        float: left;
+        height: 350px;
+    }
+    .sub{
+        width: 25%;
+        float: left;
+        height: 350px;
+    }
+    .footer{
+        height: 200px;
+        clear: both;
+    } 
+}

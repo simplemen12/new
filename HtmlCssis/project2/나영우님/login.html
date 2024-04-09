@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../나영우님/reset.css">
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+
+    <!-- 헤더 -->
+    <div class="wrapper">
+        <header class="header">
+            <div class="headArea">
+                <div class="hLogo">
+                    <a href="main.html"><img src="" alt="메인로고"></a>
+                </div>
+                <nav class="hMenu">
+                    <div class="menu">
+                        <ul class="depth1">
+                            <li><a href="javascript:gotoMenu(1);" class="dth1 ">주문/결제</a></li>
+                            <li><a href="/kor/store/main.do" class="dth1 ">나만의 메뉴</a></li>
+                            <li><a href="/kor/promotion/list.do" class="dth1  ">이벤트</a></li>
+                            <li><a href="/kor/story/main.do" class="dth1  ">고객지원</a></li>
+                        </ul>
+                    </div>
+                    <div class="util">
+                        <a href="/kor/store/rental.do" class="mLogin" title="임차문의로 이동">로그인</a>
+                        <a href="signUp.html" class="mSignin" title="인재채용으로 이동">회원가입</a>
+                        <a href="main_eng.html" class="lang" title="영문사이트로 이동">ENG</a>
+                    </div>
+                </nav>
+            </div>
+        </header>
+    </div>
+
+    <!-- 로그인 폼 -->
+    <form id="loginForm">
+        <div class="box1">
+            <h2>로그인 페이지</h2> 
+            <div class="id-input-container">
+                <input type="text" class="text-field" name="id" id="id" placeholder="아이디">
+                <input type="password" class="text-field" name="pw" id="pw" placeholder="비밀번호"><br>
+                <input type="submit" class="btn" id="loginBtn" value="로그인" disabled>
+            </div>
+            <div class="link">
+                <a href="signUp.html">계정이 없어요?</a>
+                <a href="">비밀번호를 잊어먹었나요?</a>
+            </div>
+            <div id="errorMessage"></div>
+        </div>
+    </form>
+
+    <!-- JavaScript -->
+    <script>
+        const input = document.querySelectorAll('.text-field');
+        /*
+        이 코드는 HTML 문서 내에 클래스가 'text-field'인 
+        모든 요소를 선택하여 해당 요소들을 담은 NodeList를 반환합니다. 이렇게 선택된 요소들은 input 요소로 가정됩니다.
+
+선택된 요소들은 querySelectorAll 메서드를 사용하여 CSS 선택자 
+'.text-field'를 통해 선택되었습니다. 이 선택자는 문서 내에서 클래스가 'text-field'인 모든 요소를 찾습니다.
+
+선택된 요소들은 NodeList에 저장되어 input 변수에 할당됩니다.
+ NodeList는 배열과 유사한 객체이며, 선택된 모든 요소를 순회하고 조작할 수 있습니다.
+  예를 들어, NodeList의 각 요소에 대해 반복하여 이벤트 리스너를 추가하거나 스타일을 변경할 수 있습니다.
+
+  
+NodeList는 문서 객체 모델(DOM)에서 요소들의 컬렉션을 나타내는 유사 배열 객체입니다. 
+NodeList는 선택된 요소들의 목록을 포함하며, 이 목록은 일반적으로 DOM 메서드에 의해 반환됩니다.
+ NodeList는 배열과 유사하게 인덱스를 사용하여 개별 요소에 액세스할 수 있지만,
+  일부 메서드 및 속성이 제한될 수 있습니다.
+        */
+        const btn = document.getElementById('loginBtn');
+
+        // 비밀번호 입력 필드가 변경될 때마다 이벤트 처리
+        input[1].addEventListener('input', () => {
+            let reg = /^(?=.*\d)(?=.*[a-zA-Z])(?=.*\W).{8,}$/;
+            let password = input[1].value;
+
+            /*
+             test() 메서드는 정규 표현식과 문자열을 비교하여 일치하는 
+             부분이 있는지 여부를 판별하고,
+              일치하면 true를 반환하고 그렇지 않으면 false를 반환합니다.
+            */
+
+            if (reg.test(password)) {
+                btn.disabled = false;
+                btn.style.backgroundColor = '#ff7f50';
+            } else {
+                btn.disabled = true;
+                btn.style.backgroundColor = '#ff6347';
+            }
+        });
+
+        // 회원가입 폼 제출 이벤트 처리
+        document.getElementById('registerForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const username = document.getElementById('registerId').value;
+            const password = document.getElementById('registerPw').value;
+
+            if (localStorage.getItem(username)) {
+                alert('이미 등록된 아이디입니다.');
+            } else {
+                localStorage.setItem(username, password);
+                alert('회원가입이 완료되었습니다.');
+            }
+        });
+
+        // 로그인 폼 제출 이벤트 처리
+        /*
+        
+위 코드는 회원가입 폼 제출(submit) 이벤트를 처리하는 JavaScript 코드입니다.
+
+document.getElementById('registerForm').addEventListener('submit', function(event) {:
+
+registerForm이라는 id를 가진 HTML 폼 요소에 대해 제출(submit) 이벤트가 발생했을 때, 이벤트 처리 함수를 실행합니다.
+function(event) { ... }은 이벤트 핸들러 함수로, 이 함수는 이벤트 객체 event를 매개변수로 받습니다.
+event.preventDefault();:
+
+event.preventDefault() 메서드는 이벤트의 기본 동작을 취소합니다. 즉, 이 경우에는 폼의 실제 제출(submit) 동작을 취소하여 페이지가 다시 로드되는 것을 막습니다.
+const username = document.getElementById('registerId').value;:
+
+회원가입 폼에서 아이디(input 요소)를 입력한 값을 가져와서 username 변수에 저장합니다. 이때, registerId는 HTML에서 아이디 입력 필드(input)를 가리키는 요소의 id입니다.
+const password = document.getElementById('registerPw').value;:
+
+회원가입 폼에서 비밀번호(input 요소)를 입력한 값을 가져와서 password 변수에 저장합니다. 이때, registerPw는 HTML에서 비밀번호 입력 필드(input)를 가리키는 요소의 id입니다.
+if (localStorage.getItem(username)) { ... } else { ... }:
+
+localStorage.getItem(username)을 사용하여 브라우저의 로컬 스토리지에서 해당 아이디를 가져옵니다.
+만약 해당 아이디가 이미 존재한다면(이미 등록된 아이디라면), 경고창으로 '이미 등록된 아이디입니다.'를 표시합니다.
+그렇지 않은 경우(아이디가 존재하지 않는 경우), 새로운 아이디와 비밀번호를 로컬 스토리지에 저장하고 '회원가입이 완료되었습니다.'라는 경고창을 표시합니다.
+        */
+        const loginForm = document.getElementById('loginForm');
+        const idInput = document.getElementById('id');
+        const pwInput = document.getElementById('pw');
+
+        loginForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            const enteredUsername = idInput.value;
+            const enteredPassword = pwInput.value;
+
+            // localStorage에서 저장된 비밀번호 확인
+            const storedPassword = localStorage.getItem(enteredUsername);
+            /*
+            로컬 스토리지(Local Storage)는 웹 브라우저에 데이터를 저장하는 데 사용되는 저장소입니다. 
+            이 저장소는 키-값 쌍 형태로 데이터를 저장하며, 웹 페이지를 닫아도 데이터가 유지됩니다.
+             즉, 브라우저를 종료하고 다시 열어도 저장된 데이터가 유지됩니다.
+
+
+             그럼 왜 로컬스토리지에 저장하지 않고 mysql같은 별도의 프로그램을 사용하는가 ?
+
+             
+             데이터 구조와 유연성: 로컬 스토리지는 주로 키-값 쌍 형태로 데이터를 저장하는 반면,
+              MySQL과 같은 데이터베이스 시스템은 테이블 형태로 구조화된 데이터를 저장합니다. 
+              이는 데이터의 복잡성과 유연성 측면에서 차이를 만듭니다. 데이터베이스는 복잡한 쿼리를 지원하고
+               데이터 간의 관계를 효과적으로 관리할 수 있습니다.
+
+데이터 관리와 검색: 데이터베이스 시스템은 데이터를 구조화하고 인덱싱하여 효율적으로 관리하고 검색할 수 있습니다.
+ 복잡한 쿼리를 사용하여 데이터를 필터링하고 정렬하는 등의 작업을 수행할 수 있습니다.
+
+다중 접속 및 동시성: 데이터베이스는 동시에 여러 사용자가 접근하여 데이터를 읽고 쓸 수 있습니다
+ 이는 로컬 스토리지보다 더 많은 동시성을 지원하고 여러 사용자 간의 데이터 일관성을 보장합니다.
+
+확장성: 데이터베이스 시스템은 대량의 데이터를 효율적으로 저장하고 처리할 수 있도록 설계되었습니다.
+ 이는 더 많은 데이터 및 사용자를 처리할 수 있도록 확장 가능한 구조를 제공합니다.
+
+보안: 데이터베이스 시스템은 데이터의 무결성과 보안을 보장하기 위한 다양한 보안 기능을 제공합니다. 
+사용자 권한 관리, 암호화, 백업 및 복원 등의 기능을 통해 데이터를 보호할 수 있습니다.
+            */
+
+    
+
+            if (storedPassword && storedPassword === enteredPassword) {
+                alert('로그인 성공!');
+            } else {
+                alert('아이디 또는 비밀번호가 일치하지 않습니다.');
+            }
+        });
+    </script>
+</body>
+</html>

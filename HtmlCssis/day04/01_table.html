@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            /*테이블의 선을 한줄로 만들기 
+               border: 1px solid black;
+
+            */
+            border-collapse: collapse;
+            width: 80%;
+         
+        }
+        th,td{
+            border: 1px solid black;
+        }
+        thead tr{
+            background-color: yellow;
+
+        }
+        /* tbody의 짝수 요소만 배경색을 변경*/
+        /* tbody의 tr의 마우스를 올리면 색 변경
+        */
+        tbody>tr:nth-child(odd){
+            background-color: green;
+        }
+        tbody>tr:hover{
+            background-color: tomato;
+        }
+        .w20{
+            width: 20%;
+        }
+        .w40{
+            width: 40%;
+        }
+        .w60{
+            width: 40%;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <!-- 
+
+     -->
+     <table>
+        <caption>성적표</caption>
+        <thead>
+            <tr>
+                <th>번호</th>
+                <th>이름</th>
+                <th>성적</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="w20">1</td>
+                <td class="w40">김철수</td>
+                <td class="w60">85</td>
+
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>박하나</td>
+                <td>80</td>
+
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>김떙순</td>
+                <td>80</td>
+
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="2">합계</td>
+                <td>???</td>
+            </tr>
+        </tfoot>
+     </table>
+</body>
+</html>

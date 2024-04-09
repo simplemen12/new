@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    파일명 : <input type="text" id="fileName">
+
+    <button type="button" id="btn">전송</button>
+
+    <h3 id="result"></h3>
+
+
+    <script>
+
+        //Velidtion
+        function imageFileVelid(imageFile){
+            if(imageFile.match(/(jpg|jpeg|png)/i)){
+
+                return true;
+
+            }
+            return false;
+
+        };
+
+        document.getElementById('btn').addEventListener('click',()=>{
+            let fileName = document.getElementById('fileName').value;
+            let imagTrue = `<span class="green">정상파일 입니다.</span>`;
+            let imgFalse =  `<span class="red">이미지 파일만 가능합니다.</span>`;
+            document.getElementById('result').innerHTML = 
+            imageFileVelid(fileName)? imagTrue :imgFalse;
+
+        });
+    </script>
+    
+</body>
+</html>

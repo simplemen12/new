@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <form action="">
+        <fieldset>
+            <legend>가격계산</legend>
+            가격 : <input type="text" id="price">원 <br>
+            할인율 : <input type="text" id="discount">% <br>
+            
+            <button type="button" onclick="clickEvent()">할인가격 계산</button>
+         
+        </fieldset>
+
+    </form>
+
+    <ul>
+        <script>
+            function clickEvent(){
+                let price = parseInt(document.getElementById('price').value);
+                let discount = Nuber(document.getElementById('discount').value);
+             
+
+                let savePrice = price * (discount/100);
+                let salePrice = price - savePrice;
+
+
+                document.getElementById('result').innerText =
+
+
+
+             
+                 `<li>가격 : ${price}</li>`;
+                str += `<li>할인율 : ${discount}%</li>`;
+                str += `<li>할인금액 : ${savePrice}</li`;
+                str += `<li>지불금액 : ${salePrice}</li>`;
+              
+     
+               
+
+                ul.innerHTML = str;
+
+            }
+
+
+
+
+
+            //
+
+            
+
+        </script>
+    </ul>
+    
+</body>
+</html>

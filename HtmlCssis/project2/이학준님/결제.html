@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charSet="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>결제</title>
+    <link rel="stylesheet" href="../안준영님/reset.css">
+    <link rel="stylesheet" href="../이학준님/style.css">
+    <!-- 토스 위젯 링크 -->
+    <script src="https://js.tosspayments.com/v1/payment-widget"></script>
+
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <header>
+
+    </header>
+
+    <!-- 상품 정보 영역-->
+    <div class="main1">
+        <div id="wrap">
+            <div class="title">XX 버거</div>
+            <img src="../이학준님/햄버거.jpg" width="350px" height="350px" id="img1">
+            <p id="p4">
+                가격 : 5000원 (기본)
+            </p>
+            <form id="discount-coupon">
+                <!-- <input type="checkbox" id="coupon" />5,000원 할인받기 -->
+            </form>
+
+            <hr>
+
+            <form>
+                <div id="menu">
+                    <div id="menu1">
+                        <input id="checkboxs" type="checkbox" name="socks0" value="2000" onclick="calculate(this)">
+                        치즈 토핑 추가
+                        <p id="p3">
+                            + 2000원
+                        </p>
+                    </div>
+                    <br>
+                    <div id="menu1">
+                        <input id="checkboxs" type="checkbox" name="socks1" value="3000" onclick="calculate(this)">
+                        베이컨 토핑 추가
+                        <p id="p3">
+                            + 3000원
+                        </p>
+
+                    </div>
+                    <br>
+                    <div id="menu1">
+                        <input id="checkboxs" type="checkbox" name="socks2" value="1000" onclick="calculate(this)">
+                        랜치 소스 추가
+                        <p id="p3">
+                            + 1000원
+                        </p>
+                    </div>
+                    <br>
+                    <div id="menu1">
+                        <input id="checkboxs" type="checkbox" name="socks3" value="1000" onclick="calculate(this)">
+                        스위트 칠리 소스 추가
+                        <p id="p3">
+                            + 1000원
+                        </p>
+                    </div>
+                    <br>
+                    <div id="menu1">
+                        <input id="checkboxs" type="checkbox" name="socks4" value="1500" onclick="calculate(this)">
+                        야채 추가
+                        <p id="p3">
+                            + 1500원
+                        </p>
+                    </div>
+                    <br>
+                    <div id="menu1">
+                        <input id="checkboxs" type="checkbox" name="socks5" value="2500" onclick="calculate(this)">
+                        쉬림프 패티 추가
+                        <p id="p3">
+                            + 2500원
+                        </p>
+                    </div>
+                    <br>
+                </div>
+            </form>
+        </div>
+
+        <div id="wrap">
+            <div class="title">사이드 메뉴</div>
+            <hr>
+            <form>
+                <div id="menu">
+                    <div id="menu1">
+                        <input id="checkboxs" type="checkbox" name="socks0" value="3000" onclick="calculate(this)">
+                        치킨 너겟 4조각
+                        <p id="p3">
+                            + 3000원
+                        </p>
+                    </div>
+                    <br>
+                    <div id="menu1">
+                        <input id="checkboxs" type="checkbox" name="socks1" value="5500" onclick="calculate(this)">
+                        치킨 너겟 8조각
+                        <p id="p3">
+                            + 5500원
+                        </p>
+                    </div>
+                    <br>
+                    <div id="menu1">
+                        <input id="checkboxs" type="checkbox" name="socks2" value="2000"
+                            onclick="calculate(this) ,btn()">
+                        치즈스틱
+                        <p id="p3">
+                            + 2000원
+                        </p>
+                    </div>
+                    <br>
+                    <div id="menu1">
+                        <input id="checkboxs" type="checkbox" name="socks3" value="1500" onclick="calculate(this)">
+                        감자튀김
+                        <p id="p3">
+                            + 1500원
+                        </p>
+                    </div>
+                    <br>
+                    <div id="menu1">
+                        <input id="checkboxs" type="checkbox" name="socks4" value="3500" onclick="calculate(this)">
+                        치즈볼 5개
+                        <p id="p3">
+                            + 3500원
+                        </p>
+                    </div>
+                    <br>
+                    <div id="menu1">
+                        <input id="checkboxs" type="checkbox" name="socks5" value="3000" onclick="calculate(this)">
+                        코울슬로
+                        <p id="p3">
+                            + 3000원
+                        </p>
+                    </div>
+                    <br>
+                </div>
+            </form>
+        </div>
+
+        <div id="wrap">
+            <div class="title">음료</div>
+            <hr>
+            <form>
+                <div id="menu">
+                    <div id="menu1">
+                        <input id="checkboxs" type="checkbox" name="socks0" value="3100" onclick="calculate(this)">
+                        코카 콜라
+                        <p id="p3">
+                            + 3100원
+                        </p>
+                    </div>
+                    <br>
+                    <div id="menu1">
+                        <input id="checkboxs" type="checkbox" name="socks1" value="3100" onclick="calculate(this)">
+                        스프라이트
+                        <p id="p3">
+                            + 3100원
+                        </p>
+                    </div>
+                    <br>
+                    <div id="menu1">
+                        <input id="checkboxs" type="checkbox" name="socks2" value="3700" onclick="calculate(this)">
+                        미닛메이드
+                        <p id="p3">
+                            + 3700원
+                        </p>
+                    </div>
+                    <br>
+                    <div id="menu1">
+                        <input id="checkboxs" type="checkbox" name="socks3" value="2400" onclick="calculate(this)">
+                        아메리카노
+                        <p id="p3">
+                            + 2400원
+                        </p>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <p id="p1">결제 금액을 확인해주세요.</p>
+        <div id="wrap">
+            <div id="wrap2">
+                <p>주문금액 : <input type="text" id="sumtext" value="5000">원 </p>
+                <p>배달 팁 : 3000원</p>
+            </div>
+            <hr>
+            <p id="p2">결제 예정 금액 : <input type="text" id="sumtext2" value="8000"> 원 </p>
+        </div>
+
+        <!-- 결제 방법 영역-->
+        <div id="paymentMethod">
+            <div id="payment-method"></div>
+
+            <div id="agreement"></div>
+        </div>
+        <button id="paymentButton">결제하기</button>
+    </div>
+    <footer>
+
+    </footer>
+</body>
+
+<script>
+    const clientKey = 'test_ck_D5GePWvyJnrK0W0k6q8gLzN97Eoq';
+    const customerKey = 'YbX2HuSlsC9uVJW6NMRMj';
+    const paymentButton = document.getElementById('paymentButton');
+
+    // 메뉴 영역
+    var sum = 5000;
+    let sum2 = 8000;
+
+    function calculate(box) {
+        if (box.checked) {
+            sum += parseInt(box.value);
+            sum2 += parseInt(box.value);
+        }
+        else {
+            sum -= parseInt(box.value);
+            sum2 -= parseInt(box.value);
+        }
+
+        document.getElementById("sumtext").value = sum;
+        document.getElementById("sumtext2").value = sum2;
+
+    }
+
+
+    // 결제 위젯
+    const paymentWidget = PaymentWidget(clientKey, customerKey);
+    paymentMethods = paymentWidget.renderPaymentMethods('#payment-method');
+
+    // 약관
+    const paymentAgreement = paymentWidget.renderAgreement('#agreement');
+
+    // 결제하기 클릭
+    paymentButton.addEventListener('click', () => {
+        if (document.getElementById("sumtext2").value <= 15000) {
+            alert("결제 금액 15000원 이하는 배달이 되지 않습니다.")
+        } else {
+            alert("실제로 결제되지는 않습니다.");
+        }
+    });
+
+    /*
+    PaymentWidget(clientKey, customerKey)를 통해 결제 위젯을 초기화합니다. 
+    이 때 clientKey와 customerKey는 해당 서비스를 사용하기 위한 인증 키입니다.
+
+paymentWidget.renderPaymentMethods('#payment-method')는 결제 방법을 표시하기 위한 기능을 호출합니다.
+ 이 함수는 결제 방법을 나타내는 UI를 지정한 DOM 요소(#payment-method)에 렌더링합니다.
+
+paymentWidget.renderAgreement('#agreement')는 약관을 표시하기 위한 기능을 호출합니다.
+ 이 함수는 약관을 나타내는 UI를 지정한 DOM 요소(#agreement)에 렌더링합니다.
+
+paymentButton.addEventListener('click', () => { ... })는 결제하기 버튼(paymentButton)이
+ 클릭되었을 때의 동작을 정의합니다.
+
+이벤트 리스너 내부에서는 */
+
+</script>
+
+</html>

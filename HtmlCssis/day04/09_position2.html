@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 
+     상하 좌우 값이 있을 경우
+     margin 10px 상하좌우 전체 여백
+     margin 10px 20px => 상하좌우
+     margin 10px 20px 30px => 상 좌우 하 
+     margin 10px 20px 30px 40px => 상 우 하 좌 [시계방향]
+     -->
+     <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            float: left;
+            margin: 10px;
+            text-align: center;
+            color: white;
+            font-size: 20px;
+            font-weight: 700;
+            position: relative;
+
+            
+
+        }
+        .box:hover{
+            background-color: brown;
+            /*top: 10px;
+            left: 10px; */
+
+            transform: translate(10px,10px);
+        }
+       
+        
+     </style>
+</head>
+<body>
+    <div class="box">t</div>
+    <div class="box">h</div>
+    <div class="box">a</div>
+    <div class="box">n</div>
+    <div class="box">k</div>
+    <div class="box">s</div>
+    
+</body>
+</html>

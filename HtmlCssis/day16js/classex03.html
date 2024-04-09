@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /**
+         * 
+         * class User 생성 
+         * 생성자로 name, birth를 받아서 멤버변수로 저장
+         * get age() 나이를 리턴
+         * 
+         * status() 메서드로 성인인지 미성년자인지 리턴 (콘솔에 출력  20 기준)
+         */
+
+
+         let today = new Date('2009-01-01');
+
+         console.log(today.toLocaleDateString());
+
+
+         class User{
+            constructor(name,birth){
+                this.name = name;
+                this.birth = birth;
+              
+
+            }
+
+            status(){
+               
+                console.log("진입");
+                let old=this.birth.slice(0,4);
+                old =2024-parseInt(old);
+
+              
+
+
+                if(old >19){
+                    return console.log("성년 입니다");
+
+                }
+                return console.log("미성년 입니다");
+
+        } 
+
+            get age(){
+                let old = 0;
+                if(birth.slice(0,4)>2000){
+
+                    old =2024-parseInt(birth.slice(0,4));
+
+                }else if(birth.slice(0,4)<1999){
+                    old =(2000-parseInt(birth.slice(0,4)))+24;
+
+                }
+                return `${this.firstName},${this.lastName},${this.age},${this.address}`;
+            }
+        }
+
+        let minsu = new User('minsu','2009-01-01');
+        let younghi = new User('younghi','1988-01-01');
+
+        let tmp2 = minsu.birth.slice(0,4);
+
+        younghi.status();
+
+        console.log(tmp2);
+
+
+
+
+        class User1{
+            constructor(name, birth){
+                this.name = name;
+                this.birth = birth;
+
+            }
+            get age(){  //이렇게 하면 this age 와 같은 효력
+                let birthday = new Date(this.birth);
+                let todayyear = new Date().getFullYear();
+                return todayyear - birthday.getFullYear();
+
+            }
+            status1(){
+                if(this.age <20){
+                    console.log('미성년자');
+                }else{
+                    console.log('성인');
+                }
+
+            }
+        }
+
+
+        let hong = new User1('hong','05-01-01');
+        console.log(hong.age);
+        hong.status1();
+ 
+ 
+
+
+
+    </script>
+</body>
+</html>

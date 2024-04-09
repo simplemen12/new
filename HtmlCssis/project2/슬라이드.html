@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simple Clock</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: white;
+    }
+    
+    .clock {
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        border: 8px solid black;
+        position: relative;
+        cursor: pointer;
+    }
+    
+    .second-hand {
+        position: absolute;
+        width: 1px;
+        height: calc(50% - 8px); /* 시계 반지름 - 시계 테두리 두께 */
+        background-color: red;
+        top: 50%;
+        left: 50%;
+        transform-origin: bottom center;
+        transform: translate(-50%, -100%) rotate(0deg);
+        transition: transform 0.1s linear;
+    }
+
+    .saved-value {
+        position: absolute;
+        top: 50%;
+        left: calc(50% + 170px); /* 시계 반지름 + 시계와의 간격 */
+        transform: translateY(-50%);
+        font-size: 24px;
+        color: red;
+    }
+</style>
+</head>
+<body>
+<div class="clock" id="clock">
+    <div class="second-hand" id="secondHand"></div>
+    <div class="saved-value" id="savedValue">00</div>
+</div>
+<script>
+    var secondHand = document.getElementById('secondHand');
+    var savedValueDisplay = document.getElementById('savedValue');
+    var clock = document.getElementById('clock');
+    var isDragging = false;
+    var currentDegrees = 0;
+
+    function updateClock() {
+        if (!isDragging) {
+            var now = new Date();
+            var seconds = now.getSeconds();
+            var degrees = seconds * 6; // 1초당 6도씩 회전
+            secondHand.style.transform = 'translate(-50%, -100%) rotate(' + degrees + 'deg)';
+        }
+    }
+
+    function startAdjusting(event) {
+        isDragging = true;
+        var rect = clock.getBoundingClientRect();
+        var centerX = rect.left + rect.width / 2;
+        var centerY = rect.top + rect.height / 2;
+        var deltaX = event.clientX - centerX;
+        var deltaY = event.clientY - centerY;
+        currentDegrees = Math.atan2(deltaY, deltaX) * (180 / Math.PI);
+        document.addEventListener('mousemove', adjustClock);
+        document.addEventListener('mouseup', endAdjusting);
+    }
+
+    function adjustClock(event) {
+        var rect = clock.getBoundingClientRect();
+        var centerX = rect.left + rect.width / 2;
+        var centerY = rect.top + rect.height / 2;
+        var deltaX = event.clientX - centerX;
+        var deltaY = event.clientY - centerY;
+        var newDegrees = Math.atan2(deltaY, deltaX) * (180 / Math.PI);
+        secondHand.style.transform = 'translate(-50%, -100%) rotate(' + (newDegrees - currentDegrees) + 'deg)';
+    }
+
+    function endAdjusting() {
+        isDragging = false;
+        document.removeEventListener('mousemove', adjustClock);
+        document.removeEventListener('mouseup', endAdjusting);
+        currentDegrees = parseFloat(secondHand.style.transform.split('rotate(')[1].split('deg)')[0]);
+        // 조정된 각도를 저장하는 코드 추가
+        var adjustedSeconds = Math.round(currentDegrees / 6); // 초로 변환
+        savedValueDisplay.textContent = adjustedSeconds.toString().padStart(2, '0');
+        console.log('조정된 초:', adjustedSeconds);
+    }
+
+    clock.addEventListener('mousedown', startAdjusting);
+    setInterval(updateClock, 1000); // 매 초마다 시계 업데이트
+</script>
+</body>
+</html>

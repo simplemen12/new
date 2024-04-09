@@ -1,0 +1,63 @@
+
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<title>가운데 정렬</title>
+<style type="text/css">
+.point {
+	color: #000000;
+	background-color: #00FFFF;
+	font-weight: bold;
+	padding: 5px 5px 5px 5px;
+}
+
+.title {
+	font-weight: bold;
+	background-color: #CCCCCC;
+	text-align:center;
+	padding: 5px 5px 5px 5px;
+}
+</style>
+<script type="text/javascript">
+	var dan, print, total;
+
+	dan = prompt("출력하고 싶은 구구단을 입력하세요.", "");
+	
+	// 선택한 구구단 출력 
+	print = "<h2 align='center'>" + dan + " 단</h2>"
+	print += "<table border='1'><tr>";
+	print += "<td class='title'>" + dan + "단</td>";
+	
+	for (j = 1; j <= 9; j++) {
+		print += "<td class='point'>" + j + " X " + dan + " = " + j*dan + "</td>";
+	}
+	print = print + "</tr></table><br/><br/>";
+	document.write(print);
+	
+	// 구구단 전체 표시 
+	total = "<h2 align='center'>전체구구단표</h2>";
+	total += "<table align='center' border='1'><tr>";
+	
+	for (i = 1; i <= 9; i++) {
+		total += "<td class='title'>" + i + "단</td>";
+	}
+	total += "</tr>";
+	
+	for (i = 1; i <= 9; i++) {
+		total += "<tr>";
+		for (j = 1; j <= 9; j++) {
+			total += "<td class='point'>" + i + " X " + j + " = " + i * j + "</td>";
+		}
+		total += "</tr>";
+	}
+	total += "</table>";
+	document.write(total);
+</script>
+
+</head>
+<body>
+</body>
+</html>

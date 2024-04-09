@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 스타일시트 링크 -->
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <!-- 래퍼 -->
+    <div class="wrapper">
+        <!-- 헤더 -->
+        <header class="header">
+            <!-- 헤더 영역 -->
+            <div class="headArea">
+                <!-- 로고 -->
+                <div class="hLogo">
+                    <a href="main.html"><img src="../IMG/로고2.png" alt="메인로고"></a>
+                </div>
+                <!-- 메뉴 -->
+                <nav class="hMenu">
+                    <div class="menu">
+                        <ul class="depth1">
+                            <li><a href="결제.html" class="dth1 ">주문하기</a></li>
+                            <li><a href="" class="dth1 ">나만의 메뉴</a></li>
+                            <li><a href="" class="dth1  ">이벤트</a></li>
+                            <li><a href="board.html" class="dth1  ">고객지원</a></li>
+                        </ul>
+                    </div>
+                    <!-- 유틸 -->
+                    <div class="util">
+                        <a href="" class="mLogin" title="임차문의로 이동">로그인</a>
+                        <a href="" class="mSignin" title="인재채용으로 이동">회원가입</a>
+                        <a href="main_eng.html" class="lang" title="영문사이트로 이동">ENG</a>
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <!-- 컨테이너 -->
+        <div id="container">
+            <div class="content">
+                <div class="contArea">
+                    <!-- 메인타이틀 -->
+                    <h2 class="mTit">이벤트</h2>
+                    <!-- 메인이벤트 -->
+                    <ul class="mEvent slide">
+                        <!-- 이미지 슬라이드 -->
+                        <div class="slider">
+                            <li class="inner"></li>
+                            <li class="inner"></li>
+                            <li class="inner"></li>
+                            <li class="inner"></li>
+                            <li class="inner"></li>
+                            <li class="inner"></li>
+                        </div>
+                        <!-- 이전 버튼 -->
+                        <button class="prev">이전</button>
+                        <!-- 다음 버튼 -->
+                        <button class="next">다음</button>
+                    </ul>
+                </div>
+            </div>
+            <!-- 사이드 영역 -->
+            <div class="aside">
+                <!-- 카톡문의 -->
+                <a href="" class="as1" title="카톡문의" onclick="alert('카톡문의')">카톡문의</a>
+                <!-- 전화문의 -->
+                <a href="" class="as2" title="전화문의" onclick="alert('전화문의')">전화문의</a>
+            </div>
+            <!-- 맨 위로 가기 버튼 -->
+            <button type="button" class="topBtn" onclick="window.scrollTo(0,0)">맨 위로</button>
+        </div>
+        <!-- 푸터 -->
+        <footer class="footer">
+            <div class="footArea">
+                <div class="info">
+                    <ul>
+                        <li>인천광역시 남동구 인주대로 593 엔타스 12층</li>
+                        <li>대표자 EZEN</li>
+                        <li>사업자등록번호 000-00-00000</li>
+                        <li>ezen@ezen.com</li>
+                    </ul>
+                    <p>COPYRIGHT ⓒ 2024 ALL RIGHTS RESERVED BY EZEN</p>
+                </div>
+                <!-- SNS 아이콘 -->
+                <div class="sns">
+                    <a href="" target="_blank" class="ico-inst" onclick="alert('인스타그램')">인스타그램</a>
+                    <a href="" target="_blank" class="ico-fb" onclick="alert('페이스북')">페이스북</a>
+                    <a href="" target="_blank" class="ico-you" onclick="alert('유튜브')">유튜브</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- 슬라이더 스크립트 -->
+    <script>
+        const slide = document.querySelector('.slide');
+        const slider = document.querySelector('.slider');
+        const inners = document.querySelectorAll('.inner');
+        let currentIndex = 0;
+
+        // 각 이미지의 너비를 설정하여 슬라이드 효과를 위해 준비
+        inners.forEach((inner) => {
+            inner.style.width = `${slide.clientWidth}px`;
+        })
+
+        // 슬라이더의 전체 너비 설정
+        slider.style.width = `${slide.clientWidth * inners.length}px`;
+
+        // 이전 버튼 클릭 시 이벤트 처리
+        document.querySelector('.prev').addEventListener('click', () => {
+            currentIndex--;
+            currentIndex = currentIndex < 0 ? 0 : currentIndex;
+            slider.style.marginLeft = `-${slide.clientWidth * currentIndex}px`;
+        });
+
+        // 다음 버튼 클릭 시 이벤트 처리
+        document.querySelector('.next').addEventListener('click', () => {
+            currentIndex++;
+            currentIndex = currentIndex >= inners.length ? inners.length - 1 : currentIndex;
+            slider.style.marginLeft = `-${slide.clientWidth * currentIndex}px`;
+        });
+
+        // 주기적으로 화면 넘김
+        let interval = setInterval(() => {
+            currentIndex++;
+            currentIndex = currentIndex >= inners.length ? 0 : currentIndex;
+            slider.style.marginLeft = `-${slide.clientWidth * currentIndex}px`;
+        }, 2000);
+    </script>
+</body>
+
+</html>

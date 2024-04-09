@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        input 2개 생성 => 과목 점수
+        map에 추가
+        출력 => map을 출력 ul에 li 형태로 출력  html : 89
+        결과 => 합계 평균 합격여부  평균 60이상이면 합격 => h3
+     -->
+
+     <h3 id="result"></h3>
+
+     과목:<input type="text" id="sub">
+     점수:<input type="text" id="score">
+
+
+     <button type="button" id="btn1">추가</button>
+     <button type="button" id="btn2">출력</button>
+     <button type="button" id="btn3">결과</button>
+
+     <script>
+
+        let sub1 =  '';
+        let score1 = 0 ;
+
+        const myMap = new Map();
+        
+       
+        console.log(myMap);
+
+
+        document.getElementById('btn1').addEventListener('click',()=>{
+            sub1 =  document.getElementById('sub').value;
+            score1 =  document.getElementById('score').value;
+
+            
+
+            myMap.set(sub1,parseInt(score1));
+            console.log(myMap);
+        });
+
+        let print='';
+
+        
+
+        document.getElementById('btn2').addEventListener('click',()=>{
+
+            let str= '';
+
+
+
+            myMap.forEach(function(v,i){
+            console.log(v,i);
+
+            str+=`<ul><li>과목${i}</il><li>성적 ${v}</li></ul>`;
+
+
+
+            
+
+
+        })
+
+        result.innerHTML = str;
+  
+           
+          //  document.getElementById('result').innerText = str;
+  
+           // `과목${sub1}, 점수: ${score1}`;
+        });
+
+        let count = 0;
+        let count1 = 0;
+
+        document.getElementById('btn3').addEventListener('click',()=>{
+
+            
+
+            myMap.forEach(function(v,i){
+            console.log(v,i);
+
+            count += v;
+            count1++;
+            console.log(count);
+
+
+        })
+
+        let avg = count/count1;
+            
+            document.getElementById('result').innerText =
+            `과목${sub1}, 점수: ${score1}`;
+
+            if(avg>59){
+                document.getElementById('result').innerText =
+            `합격여부: 합격`;
+
+            }else{
+                document.getElementById('result').innerText =
+            `합격여부: 불합격`;
+
+            }
+        });
+
+
+
+
+     </script>
+
+    
+    
+</body>
+</html>

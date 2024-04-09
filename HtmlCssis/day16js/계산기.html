@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- 
+        eval 함수 사용 하지마 보안에 취약
+    
+    
+    -->
+   <div class="container">
+    <div class="areatop">
+        <button type="button" value="7">7</button>
+        <button type="button" value="8">8</button>
+        <button type="button" value="9">9</button>
+        <button type="button" value="+">+</button>
+        <button type="button" value="c">c</button><br>
+        <button type="button" value="4">4</button>
+        <button type="button" value="5">5</button>
+        <button type="button" value="6">6</button>
+        <button type="button" value="-">-</button><br>
+        <button type="button" value="1">1</button>
+        <button type="button" value="2">2</button>
+        <button type="button" value="3">3</button>
+        <button type="button" value="*">*</button><br>
+        <button type="button" value=".">.</button>
+        <button type="button" value="0">0</button>
+        <button type="button" value="=">=</button>
+        <button type="button" value="/">/</button>
+        
+     </div>
+     <h1 id="printResult"></h1>
+   </div>
+
+
+
+   <script>
+
+let str = '';
+let count = 0;
+
+let op = '';
+let tmp = 0;
+let tmp2 = 0;
+let tmp3 = 0;
+let result = 0;
+
+
+let pre = 0;
+let save = 0;
+
+    
+       
+       
+
+
+        //모든 요소를 찍었을 때나옴
+    document.querySelector('.container').addEventListener('click',(e)=>{ //css의 선택자
+        console.log(e.target.value);
+
+        // 클릭된 버튼의 값이 '='이 아닌 경우에만 문자열에 누적
+        /*
+        if(e.target.value !== '='){
+            str += e.target.value;
+        }
+
+        if(e.target.value == '*'){
+            tmp =  str; //연산자가 나온 순간 tmp에 값 저장 
+             op = '*';
+            tmp = parseInt(tmp); //정수화
+
+        }
+
+
+        if(e.target.value == '='){
+             //만약 = 이 입력된 경우 계산을 시작 한다 tmp값에서 연산자와 누적된 str에서 추출
+             calc(op,count,tmp,tmp2);
+
+            }
+        */
+
+        //나중에 순서      
+
+        if (typeof str !== 'undefined') {
+                count++;
+                console.log("난 카운터"+count);
+        }
+
+       
+        if(e.target.value != '=' && typeof str != 'undefined'){
+            str += e.target.value;
+        }
+        // 결과 출력
+        if (typeof str !== 'undefined' || str==0) {
+            if(save!=0){ //save에 저장된 값이 있다면 같이 출력
+        console.log('같이출력')
+            document.getElementById('printResult').innerHTML = save +op+ pre; 
+
+            //slice(str.length-1,str.length)
+
+
+        }    
+        if(save==0){
+            document.getElementById('printResult').innerHTML = str; 
+
+        }
+           
+        }
+
+
+
+        
+
+        if (str.includes("-") || str.includes("+") || str.includes("*") || str.includes("/")) {
+        console.log("문자열에 연산 기호가 포함되어 있습니다. 초기화 후 누적시작");
+        
+        str.indexOf("-" ||"+"||"*"||"/");//기호의 위치를 찾고
+        console.log(str.indexOf("-" ||"+"||"*"||"/"));
+
+        op=str.slice(str.indexOf("-" ||"+"||"*"||"/")); //기호를 잘라서 op에 저장
+        console.log(op);
+
+
+        save = pre;
+        console.log(save+"save에 pre값 저장")
+
+          
+           str= 0; //다시초기화
+           
+           
+           console.log(str+'초기화완료');
+           //let str = num.toString(); 만약 에러시 다시 변환
+           //에러방지 toString
+           str =  str.toString();
+
+           
+
+        
+        } else {
+        console.log("문자열에 연산 기호가 포함되어 있지 않습니다. 누적");
+        }
+
+        //= 은 계산 시작
+        if(e.target.value.includes("=")){
+            console.log('진입');
+            console.log(save);
+
+
+            switch(op){
+                case '+': result  = save + pre; break; 
+                case '-': result  = save - pre; break; 
+                case '*': result  = save * pre; break; 
+                case '/': result  = save / pre; break; 
+
+            }
+
+            document.getElementById('printResult').innerHTML = result;
+
+        }
+
+
+
+        //연산기호가 없다면 계속 누적
+        if(!(str.includes("-") || str.includes("+") || str.includes("*") || str.includes("/"))){
+          //연산자 입력시 정수화 및 저장 
+          
+           pre = parseInt(str);
+           console.log(pre+'pre');
+           //let str = num.toString(); 만약 에러시 다시 변환
+           tmp3 = 0; //다시 초기화
+           
+
+
+        }
+
+        
+      
+
+
+        
+        
+  
+
+
+    });
+
+
+
+
+
+
+    function calc(){
+       if(op =='*'){
+
+   
+    //tmp2에 연산기호를 기준으로 시작하여 count숫자[문자열 총길이]를 끝으로 
+    //slice로 연산자 이후 숫자를 추출 및 parseInt
+    tmp2 = str.slice(str.indexOf(("*")+1),count); 
+    tmp2 = parseInt(tmp2);
+    console.log(tmp2);
+
+    str.indexOf(("*")+1);
+    result = tmp * str;
+    console.log(result);
+      }
+   }
+    
+
+
+
+
+    
+
+
+
+   
+
+   </script>
+    
+</body>
+</html>

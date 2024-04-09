@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>가위바위보를 10번 하여 승률 출력</h1>
+    <button type="button" id="btn">승률출력</button>
+    <h3>
+        10게임의 승률은 <span id="result"></span>%입니다.
+    </h3>
+
+    <script>
+        //가위바위보 게임
+        //com = random / player = random
+        //1= 가위, 2=바위, 3=보
+        //승률을 계산 (승 / 10-무)) /  * 100 소수점 2자리까지 표현
+        //콘솔에 com과 player 출력 
+        //콘솔에 승 무 패
+
+        let com = 0;
+        let player = 0;
+
+        let win = 0;
+        let lose = 0;
+        let tie = 0;
+
+        for(let i=0; i<10; i++){
+            com = Math.floor(Math.random()*3);
+            player = Math.floor(Math.random()*3);
+            console.log(com,player);
+
+            if(com === player){
+                tie++;   
+                
+                console.log( `player승리  현재스코어 win ${win} lose ${lose} tie ${tie}`  )
+            
+            };
+
+            if(com===0 && player===1){
+                win++;   
+                
+                console.log( `player승리  현재스코어 win ${win} lose ${lose} tie ${tie}`  )
+            
+            };
+
+           
+            if(com===1 && player===0){
+                lose++;   
+                
+                console.log( `player승리  현재스코어 win ${win} lose ${lose} tie ${tie}`  )
+            
+            };
+
+
+            if(com===2 && player===1){
+                win++;   
+                
+                console.log( `player승리  현재스코어 win ${win} lose ${lose} tie ${tie}`  )
+            
+            };
+
+           
+            if(com===1 && player===2){
+                lose++;   
+                
+                console.log( `player승리  현재스코어 win ${win} lose ${lose} tie ${tie}`  )
+            
+            };
+
+
+
+            if(com===0 && player===2){
+                lose++;   
+                
+                console.log( `player승리  현재스코어 win ${win} lose ${lose} tie ${tie}`  )
+            
+            };
+
+           
+            if(com===2 && player===0){
+                win++;   
+                
+                console.log( `player승리  현재스코어 win ${win} lose ${lose} tie ${tie}`  )
+            
+            };
+
+
+
+            //0은 가위 1은 바위 2는 보
+
+        }
+        
+
+         //승률을 계산 (승 / 10-무)) /  * 100 소수점 2자리까지 표현 winRate = (double) wins / totalGames * 100;
+
+       var total =  win/(10-tie)*100;
+
+       
+       //double(total);
+       console.log(total);
+
+       document.getElementById('btn').addEventListener('click',()=>{
+            
+        result.innerHTML = total.toFixed(2);
+        })
+  
+       
+
+    </script>
+</body>
+</html>

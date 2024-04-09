@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<body>
+
+<div class="container">
+    <div class="areatop">
+        <button type="button" value="7">7</button>
+        <button type="button" value="8">8</button>
+        <button type="button" value="9">9</button>
+        <button type="button" value="+">+</button>
+        <button type="button" value="c">c</button><br>
+        <button type="button" value="4">4</button>
+        <button type="button" value="5">5</button>
+        <button type="button" value="6">6</button>
+        <button type="button" value="-">-</button><br>
+        <button type="button" value="1">1</button>
+        <button type="button" value="2">2</button>
+        <button type="button" value="3">3</button>
+        <button type="button" value="*">*</button><br>
+        <button type="button" value=".">.</button>
+        <button type="button" value="0">0</button>
+        <button type="button" value="=">=</button>
+        <button type="button" value="/">/</button>
+    </div>
+    <h1 id="printResult"></h1>
+</div>
+
+<script>
+
+const printResult = document.getElementById('printResult');
+let printValue = ''; // 결과 string
+
+document.querySelector('.container').addEventListener('click', (e) => {
+    let btnValue = e.target.value;
+
+    if (!isNaN(btnValue)) { // 숫자일 경우
+        printValue += btnValue;
+    } else { // 숫자가 아닌 케이스
+        switch(btnValue) {
+            case 'c':
+                printValue = ''; // 변수 안의 값을 초기화
+                break;
+            case '.':
+                if (!printValue.includes('.')) {
+                    printValue += btnValue;
+                }
+                break;
+            case '=':
+                printValue = evaluateExpression(printValue);
+                break;
+            default:
+                printValue += ` ${btnValue} `; // 양옆에 공백
+                break;
+        }
+    }
+
+    printResult.innerText = printValue;
+});
+
+function evaluateExpression(expression) {
+    const tokens = expression.split(' ');
+    let result = parseFloat(tokens[0]);
+
+    for (let i = 1; i < tokens.length; i += 2) {
+        const operator = tokens[i];
+        const operand = parseFloat(tokens[i + 1]);
+
+        switch(operator) {
+            case '+':
+                result += operand;
+                break;
+            case '-':
+                result -= operand;
+                break;
+            case '*':
+                result *= operand;
+                break;
+            case '/':
+                if (operand !== 0) {
+                    result /= operand;
+                } else {
+                    return 'Error: Division by zero';
+                }
+                break;
+            default:
+                return 'Error: Invalid expression';
+        }
+    }
+
+    return result.toFixed(2);
+}
+
+</script>
+
+</body>
+</html>

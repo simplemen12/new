@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>1-45까지 중복되지 않게 숫자 6개를 랜덤으로 추출 => 출력
+        Set 객체를 사용하여 생성
+    </h1>
+
+    <button id="rn">랜덤번호 6자리 생성(출력)</button>
+    <h2 id="r1"></h2>
+
+    <button id="rotto">당첨번호 7자리(마지막 번호는 보너스번호 생성 출력)</button>
+    <h2 id="r2"></h2>
+
+    <button id="identify">결과확인</button>
+    <h2 id="r3"></h2>
+
+    <script>
+        let comNum = new Set(); // Set 객체로 변경
+        let comNum1 = new Set(); // Set 객체로 변경
+
+        document.getElementById('rn').addEventListener('click',()=>{
+            comNum.clear(); // Set 초기화
+
+            while (comNum.size < 6) { 
+                let randomNum = Math.floor(Math.random() * 45) + 1;
+                comNum.add(randomNum);
+            }
+
+            document.getElementById('r1').innerHTML = Array.from(comNum).join(', '); 
+        });
+
+        document.getElementById('rotto').addEventListener('click',()=>{
+            comNum1.clear(); // Set 초기화
+
+            while (comNum1.size < 6) { 
+                let randomNum = Math.floor(Math.random() * 45) + 1;
+                comNum1.add(randomNum);
+            }
+
+            let bonus = Math.floor(Math.random() * 45) + 1;
+            while (comNum1.has(bonus)) { // 
+                bonus = Math.floor(Math.random() * 45) + 1;
+            }
+            comNum1.add(bonus);
+
+            document.getElementById('r2').innerHTML = Array.from(comNum1).join(', ');
+        });
+
+        document.getElementById('identify').addEventListener('click',()=>{
+            let matchCount = 0;
+            comNum1.forEach(function(num) {
+                if (comNum.has(num)) {
+                    matchCount++;
+                }
+            });
+
+            if(matchCount == 7) {
+                console.log("당첨");
+            }
+
+            document.getElementById('r3').innerHTML = `당첨 번호와 일치하는 번호 개수: ${matchCount}개`;
+        });
+    </script>
+</body>
+</html>

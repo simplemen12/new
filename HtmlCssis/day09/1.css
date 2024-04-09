@@ -1,0 +1,274 @@
+@font-face {
+    font-family: Noto_sans_KR;
+    /* src: url(); */ /* 폰트 경로가 필요하다면 여기에 추가 */
+}
+
+body {
+    font-family: Noto_sans_KR;
+    color: black;
+}
+
+.wrap {
+    width: 100%;
+    min-width: 1200px;
+}
+
+.inner {
+    width: 1170px;
+    margin: auto;
+    box-sizing: border-box;
+}
+
+header {
+    width: 100%;
+}
+
+header .inner {
+    height: 115px;
+    position: relative;
+    top: 15px;
+    left: 0;
+}
+
+header .inner h1 {
+    position: absolute;
+}
+
+header .inner .top-menu {
+    display: flex;
+    justify-content: flex-end;
+}
+
+header .inner .top-menu li {
+    margin: 10px 20px;
+}
+
+header .inner .nav ul {
+    display: flex;
+    justify-content: center;
+    height: 79px;
+}
+
+header .inner .nav ul li {
+    margin: 0 40px;
+    font-size: large;
+    font-weight: 700;
+    line-height: 79px;
+}
+
+header .inner .nav ul li:hover {
+    color: green;
+}
+
+section > .inner {
+    width: 100%;
+    height: 725px;
+    background-image: url(../day09/img/bg1.jpg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+section > .inner > li img {
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+main > .con1 > .inner > a {
+    position: relative;
+}
+
+main > .con1 > .inner > a > img {
+    position: absolute;
+    left: 240px;
+    top: 25px;
+}
+
+main > .con1 > .inner > a > .time {
+    display: flex;
+    justify-content: center;
+    line-height: 82px;
+}
+
+main > .con1 > .inner > a > .time > .ti {
+    display: flex;
+    justify-content: center;
+    margin-right: 30px;
+    font-size: 20px;
+    position: relative;
+}
+
+main > .con1 > .inner > a > .time > .ti > p {
+    margin-right: 10px;
+}
+
+main > .con1 > .inner > a > .time > .p {
+    font-size: 20px;
+}
+
+.con {
+    /* padding: 120px 0; */
+}
+
+.bold {
+    font-weight: 700;
+}
+
+.before::before {
+    content: " ";
+    background: #c4b1b1;
+    width: 1px;
+    height: 13px;
+    position: absolute;
+    margin-left: -10px;
+}
+
+.top-menu {
+    position: relative;
+}
+
+section > ul {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+}
+
+main .con1 {
+}
+
+main .con1 .inner {
+    height: 100px;
+}
+
+main .con2 {
+    background-image: url(../day09/img/202005130508091810.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+main .con2 .inner {
+    height: 890px;
+    text-align: center;
+}
+
+main .con2 .inner > h1 {
+    font-size: 3em;
+    margin-bottom: 30px;
+    color: white;
+}
+
+main .con2 .inner > h3 {
+    font-size: 2em;
+    margin-bottom: 50px;
+    color: white;
+}
+
+main .con2 .inner > ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+main > .con2.inner > .inner > ul > li > .img {
+    width: 584px;
+    height: 420px;
+    background-size: cover;
+    background-position: center;
+}
+
+main > .con2.inner > .inner > ul > li > .img.img1 {
+    background-image: url(../day09/img/불상.jpg);
+}
+
+main > .con2.inner > .inner > ul > li > .img.img2 {
+    background-image: url(../day09/img/종.jpg);
+}
+
+main > .con2.inner > ul > li > p {
+    height: 82px;
+    line-height: 82px;
+    font-size: 30px;
+    font-weight: 700;
+    color: white;
+}
+
+.j:hover {
+    border: 3px solid white;
+}
+
+.b:hover {
+    border: 3px solid white;
+}
+
+main .con3 {
+    background-image: url(../day09/img/종.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+main .con3 .inner {
+    height: 710px;
+    text-align: center;
+}
+
+main .con3 .inner > h1 {
+    font-size: 3em;
+    margin-bottom: 30px;
+}
+
+main .con3 .inner > p {
+    font-size: 2em;
+    margin-bottom: 50px;
+}
+
+main .con3 .inner > ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+.txtArea {
+    width: 375px;
+    height: 77px;
+    line-height: 77px;
+    font-size: 20px;
+    font-weight: 700;
+    background-color: white;
+}
+
+.txtarea:hover {
+    box-shadow: 10px 10px 20px black;
+}
+
+
+
+main .con4 .inner {
+    height: 890px;
+    text-align: center;
+}
+
+main .con4 .inner > h1 {
+    font-size: 3em;
+    margin-bottom: 30px;
+}
+
+main .con4 .inner > p {
+    font-size: 1
+}
+
+.left>ul{
+    margin-top: 20px;
+
+}
+.left>ul>li>a{
+    display: block;
+    float: left;
+    width: 412px;
+
+}
+.left>ul>li>span{
+    color: gray;
+}

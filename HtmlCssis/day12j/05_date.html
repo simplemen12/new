@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+        날짜 관련 함수
+    </h1>
+    <ul>
+        <li>
+            new date(); 오늘날짜변환
+        </li>
+        <li>
+            getFullYear(); 연도만 리턴
+        </li>
+        <li>
+            getMonth()+! 월만 추출 0 11월 +1
+        </li>
+        <li>
+            getDate() : 일 1 - 31 리턴
+        </li>
+        <li>
+            getDay() : 요일 0 6 일 토
+        </li>
+        <li>
+            getHours(), getMinutes(), getSeconds() : 시분초 값 추출
+        </li>
+        <li></li>
+    </ul>
+
+    <script>
+        let today = new Date();
+        console.log(today);
+        console.log(today.getFullYear);
+        console.log(today.getMonth);
+        console.log(today.getDay);
+        console.log(today.getHours);
+        console.log(today.getDate);
+        let today2 = today.toLocaleDateString();
+        console.log(today2);
+        console.log(time);
+        let dateTime = today.tolacalString();
+        console.log(dateTime);
+
+    </script>
+    
+</body>
+</html>

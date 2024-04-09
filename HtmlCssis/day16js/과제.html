@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 구구단 문제 
+        map
+
+        ol에 li
+
+        style.bg,green
+    
+    객체 key 값에 생성과 동시에 넣어준다 -->
+
+    <h1>
+        <button type="button" id="rp">문제출제</button>
+    </h1>
+
+    <ol id="q"></ol>
+    <h1>
+        <button type="button" id="compareBtn">정답확인</button>
+    </h1>
+    <h3 id="printRatio"></h3>
+
+
+
+
+
+
+
+
+
+    <script>
+        const ansObj={};
+        //반복문
+        //ansObj[`ans${i}`] = dan * incre;
+
+
+
+        let pre = 0;
+        let nex = 0;
+        const myMap = new Map();
+
+        let tmp = 0;
+        let tmp2= '';
+
+
+
+
+        document.getElementById('rp').addEventListener('click',()=>{
+
+            for(let i=0; i<10; i++){
+                console
+                pre = Math.floor(Math.random()*10)+1;
+                nex = Math.floor(Math.random()*10)+1;
+
+               
+
+                tmp = pre*nex;
+                tmp2 +=  `<li>${pre}*${nex}=</li>`; //문제를 누적
+
+                document.getElementById('q').innerHTML = tmp2;
+
+                myMap.set(i,tmp); //정답저장
+
+
+            }
+        console.log(myMap);
+
+        myMap.forEach(function(v,i){
+            console.log(v,i);
+
+        })
+           
+        });
+
+
+
+
+
+    </script>
+    
+</body>
+</html>

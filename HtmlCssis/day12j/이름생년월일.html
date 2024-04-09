@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form action="">
+        이름 : <input type="text" id="name"><br>
+        주민번호 : <input type="text" id="addr"><br>
+        
+
+      
+
+        
+        <button type="button" onclick="getDates()">객체로 전송</button>
+
+    </form>
+
+    전송받은 데이터 표로 <button type="button"  id="printBtn">정보출력</button>
+    <table border="1" id="dataTable">
+
+      
+        
+    </table>
+
+    <ol id="ol">리스트</ol>
+
+    <script>
+
+
+
+
+
+        const dataObj = {
+            name:"",
+            addr:"",
+            sex:"",
+            birth:"",
+            age:"",
+           
+
+        
+        
+        
+        };
+        console.log(dataObj);
+
+        function getDates(){
+            dataObj.name = document.getElementById('name').value;
+            dataObj.addr = document.getElementById('addr').value;
+            
+            console.log(dataObj);
+            let sex = ((addr==="1" || addr ==="3")? "남":"여");
+            console.log(sex);
+            dataObj.sex =sex;
+            let birth = dataObj.addr.slice(0,6);
+            dataObj.birth = birth;
+            console.log(birth);
+            let age = (new Date().getFullYear() - (1900 + parseInt(dataObj.addr.slice(0, 2)))) + 1;
+            console.log(age);
+            dataObj.age = age-100;
+
+          
+
+            console.log(dataObj);
+            console.log(sex);
+            console.log(age);
+            console.log(birth);
+
+        }
+
+       
+
+        document.getElementById('printBtn').addEventListener('click',()=>{
+            let dataTable = document.getElementById('dataTable');
+            let str=`<tr><th>이름</th><td>${dataObj.name}</td></tr>`;
+            str+=`<tr><th>생년월일</th><td>${dataObj.birth}</td></tr>`;
+            str+=`<tr><th>나이</th><td>${dataObj.age}</td></tr>`;
+            str+=`<tr><th>성별</th><td>${dataObj.sex}</td></tr>`;
+
+            dataTable.innerHTML = str;
+          
+
+
+
+        });
+    </script>
+
+    
+</body>
+</html>

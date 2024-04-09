@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        button 2개 준비 + / - 
+        값이 1씩 증가 값이 1씩 감소
+     -->
+
+     <h1 id="number">0</h1>
+
+     <div>
+        <button id="incre">+</button>
+        <button id="decre">-</button>
+     </div>
+
+     <script>
+
+        let count = 0;
+        document.getElementById('incre').addEventListener('click',()=>{
+            count++;
+            number.innerHTML = count;
+
+        });
+
+        document.getElementById('decre').addEventListener('click',()=>{
+            if(count!=0){
+                count--;
+                number.innerHTML = count;
+
+            }
+
+
+        });
+
+        
+
+
+
+
+
+
+
+
+
+
+     </script>
+    
+</body>
+</html>

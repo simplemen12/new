@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Khojki&display=swap" rel="stylesheet">
+
+    <style>
+        .font{
+            font-family: 'Courier New', Courier, monospace, serif;
+        }
+        h1.font {
+        font-family: 'Courier New', Courier, monospace, serif;
+    }
+
+    .hh0{
+        border: solid 1px black;
+    }
+    ul>li{
+    width: 50px;
+    height: 50px;
+    display:flex;
+    justify-content: left;
+    align-items: center;
+    margin: 0 10 0 10;
+    }
+    </style>
+</head>
+<body>
+    <!-- #region -->
+    <button type="button" id="btn" style="width: 50px; height: 150px;">데이터 가져오기</button>
+    <button type="button" id="btn1" style="width: 50px; height: 150px;">데이터 가져오기1</button>
+    
+    <div class="main"> <!-- .main 클래스 추가 -->
+        <h1 id="main"></h1>
+        <h3 id="mainb"></h3>
+    
+        <ul id="ul1"> <!-- ul1 클래스로 변경 -->
+            히어로
+            <li id="hh0" style="font-family: 'Courier New', Courier, monospace, serif;"></li>
+            <li id="hh1"></li>
+            <li id="hh2"></li>
+        </ul>
+    </div>
+
+    <script>
+        document.getElementById('btn').addEventListener('click', () => {
+            fetch('https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json')
+            .then(resp => resp.json())
+            .then(result => {
+                console.log(result);
+                return result;
+            })
+            .then(result => printData(result))
+            .catch(err => console.log(err));
+        });
+
+        document.getElementById('btn1').addEventListener('click', () => {
+            fetch('https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json')
+            .then(resp => resp.json())
+            .then(result => {
+                console.log(result);
+                return result;
+            })
+            .then(result => printData(result))
+            .catch(err => console.log(err));
+        });
+
+        function printData(Obj){
+            console.log(Obj);
+            let ul = document.getElementById('ul');
+            console.log(Obj.members[0]); 
+            console.log(Obj.members[0].name); 
+            console.log(Obj.members[0].age); 
+            console.log(Obj.members[0].powers); 
+
+            console.log(Obj.members[1]);
+            console.log(Obj.members[1].name);
+
+            console.log(Obj.members[2]);
+            console.log(Obj.members[2].name);
+            console.log(Obj.squadName);
+
+            main.innerHTML += `${Obj.squadName}`;
+            mainb.innerHTML += `homeTown: ${Obj.homeTown} // Formed ${Obj.formed}`;
+
+            let h01 = `${Obj}`;
+               
+            for(const key in Obj.members[0]){
+                hh0.innerHTML += `<li>${key} : ${Obj.members[0][key]}</li>`;
+            }
+
+            let h02 = `${Obj}`;
+           
+            for(const key in Obj.members[1]){
+                hh1.innerHTML += `<li>${key} : ${Obj.members[1][key]}</li>`;
+            }
+
+            let h03 = `${Obj}`;
+            
+            for(const key in Obj.members[2]){
+                hh2.innerHTML += `<li>${key} : ${Obj.members[2][key]}</li>`;
+            }
+        }
+    </script>
+    
+</body>
+</html>
+
+
+
+        
+    </script>
+    
+</body>
+</html>

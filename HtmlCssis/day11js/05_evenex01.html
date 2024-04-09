@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        성적확인 
+        이름: 홍길동
+        국어:80
+        영어:90
+        수학:80
+        성적계산 버튼
+        -------------------------
+        이름 : 홍길동
+        국어 :80
+        ... 합계평균
+     -->
+
+     <form action="">
+        <fieldset>
+            <legend>성적계산</legend>
+            이름: <input type="text" id="name"><br>
+            국어: <input type="text" id="g"><br>
+            영어: <input type="text" id="e"><br>
+            수학:<input type="text" id="m"><br>
+          
+            <button type="button" onclick="clickEventInput()">성적계산</button>
+            
+            <button type="button" onclick="makeList()">list</button>
+        </fieldset>
+    </form>
+
+
+    <ol id="ol">계산</ol>
+
+    
+
+
+
+    <script>
+        const info = document.getElementById('info');
+        //ol 태그 객체를 가져오기 
+        function makeList(){
+            
+            let g = parseInt(document.getElementById('g').value);
+            let e = parseInt(document.getElementById('e').value);
+            let m = parseInt(document.getElementById('m').value);
+        
+            let n = document.getElementById('name').value;
+        
+            let avr = (g + e + m) / 3;
+            let sum = g + e + m;
+        
+            let ol = document.getElementById(`ol`);
+            ol.innerHTML += `
+            <li>이름 : ${n}</li>
+            <li>국어 : ${g}</li>
+            <li>영어 : ${e}</li>
+            <li>수학 : ${m}</li>
+            <li>합계 : ${sum}</li>
+            <li>평균 : ${avr}</li> `;
+        }
+        
+
+        
+
+
+
+        
+
+
+
+        function clickEventInput(){
+            //화면에 입력한 값을 받아오는 과정
+            //1.화면에 값이 있어야 한다.
+            //2. 저장공간이 있어야 함.
+            
+            let userid = document.getElementById('userid').value;
+            let userpw = document.getElementById('userpw').value;
+            let birth = document.getElementById('birth').value;
+            let pin = document.getElementById('pin').value;
+            console.log(`userid : ${userid}`);
+            console.log(`userpw : ${userpw}`);
+            console.log(`birth : ${birth}`);
+            console.log(`text : ${pin}`);
+
+            let str = `userid : ${userid}`;
+            str += `userpw : ${userpw}`;
+            str += `birth : ${birth}`;   //+=을 안쓰면 덮어써짐.
+            str += `text : ${pin}`;
+
+            info.innerText = str;
+
+
+        }
+    </script>
+</body>
+</html>

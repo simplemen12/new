@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <form action="">
+        <fieldset>
+            <legend>성적계산</legend>
+            이름: <input type="text" id="name"><br>
+            국어: <input type="text" id="g"><br>
+            영어: <input type="text" id="e"><br>
+            수학:<input type="text" id="m"><br>
+          
+            
+            <button type="button" id="btn" onclick="makeList()">성적계산</button>
+        </fieldset>
+    </form>
+
+
+    <ol id="ol">계산</ol>
+
+    <h3 id="result">
+
+        <!--이름 합계 평균 합격여부 60 이상이면 p 아니면 f
+        입력한 성적의 점수값이 0-100 사이의 값이 아니면 alert창 띄워 안내
+        -->
+    </h3>
+
+    <script>
+       
+        function makeList(){
+            
+            let g = parseInt(document.getElementById('g').value);
+            let e = parseInt(document.getElementById('e').value);
+            let m = parseInt(document.getElementById('m').value);
+
+            if(g>100 || e>100 || m>100){
+                alert("숫자를 입력해주세요");
+                
+            }
+        
+            let n = document.getElementById('name').value;
+        
+            let avr = (g + e + m) / 3;
+            let sum = g + e + m;
+        
+            let ol = document.getElementById(`ol`);
+
+            if(n<61){"f"}else{"p"};
+            if(g<61){"f"}else{"p"};
+            if(e<61){"f"}else{"p"};
+            if(m<61){"f"}else{"p"};
+            if(sum<61){"f"}else{"p"};
+            if(avr<61){"f"}else{"p"};
+
+            
+           
+            ol.innerHTML += `
+            <li>이름 : ${n}</li>
+            <li>국어 : ${g}</li>
+            <li>영어 : ${e}</li>
+            <li>수학 : ${m}</li>
+            <li>합계 : ${sum}</li>
+            <li>평균 : ${avr}</li> 
+
+            
+            
+            `;
+
+            if(n<61){ol.innerHTML += `f`;}else{ol.innerHTML += `f`};
+            if(g<61){"f"}else{"p"};
+            if(e<61){"f"}else{"p"};
+            if(m<61){"f"}else{"p"};
+            if(sum<61){"f"}else{"p"};
+            if(avr<61){"f"}else{"p"};
+
+
+
+
+
+            document.getElementById('btn').addEventListener('click',()=>{
+                let name = document.getElementById('name').value;
+                let kor = document.getElementById('kor').value;
+                let eng = document.getElementById('eng').value;
+                let math = document.getElementById('math').value;
+                
+                
+                if(check(kor) && check(eng) && check(math)){
+                    let sum = Number(kor)+Number(eng)+Number(math);
+                    let avg = sum / 3;
+
+                    let acount = (avg >= 60 )? 'pass':'fail';
+
+                    document.getElementById('result').innerText =
+                    `이름${name}, sum${sum},avg${avg},account${account}`;
+                }
+            });
+
+            function check(num){
+                if( num < 0 || num > 100){
+                    alert('0-100사이의 값을 입력해주세요');
+
+                    //점수의 값을 비워야함.
+                    document.getElementById('kor').value='';
+                    document.getElementById('eng').value='';
+                    document.getElementById('math').value='';
+                    document.getElementById('result').innerText='';
+                    return false;
+
+
+                }else{
+                    return true;
+                }
+            }
+
+
+
+
+
+
+
+
+        }
+    </script>
+    
+</body>
+</html>
